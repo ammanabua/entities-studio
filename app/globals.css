@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Barrio&family=Krona+One&family=Rubik:ital,wght@0,300;0,400;0,600;1,300&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: #EB6F07;
+  }
+}
+
+body {
+  background-color: #EB6F07;
+}
