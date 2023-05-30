@@ -24,7 +24,7 @@ export default function Home() {
                 alt="Family Portrait" 
               />
           </div>
-          <div className='w-full text-center my-8 underline text-2xl my-20'>
+          <div className='w-full text-center my-8 underline font-bold text-2xl my-20'>
             <Link href='/collections/family-portrait'>
             🍃Family Portrait🍃
             </Link>
@@ -39,14 +39,14 @@ export default function Home() {
                 alt='Tamas Art' 
               />
           </div>
-          <h2 className='text-center w-full underline text-2xl my-20'>
+          <h2 className='text-center w-full underline font-bold text-2xl my-20'>
             <Link href="/collections/tamas-art">
               ✨Tama's Art✨
             </Link>
           </h2>
         </section>
 
-        <Link href="/events" className='font-rubik font-bold uppercase bg-gray-300 p-3 w-5/6 border-none text-center text-sm my-5'>
+        <Link href="/events" className='font-rubik font-bold uppercase bg-gray-300 p-4 w-80 md:w-96 border-none text-center text-sm my-5'>
          Explore Events 
         </Link>
       </main>
