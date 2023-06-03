@@ -29,12 +29,14 @@ async function dbConnect() {
       bufferCommands: false,
     }
 
-    cached.promise = mongoose.connect(MONGO_URL, opts).then((mongoose) => {
+    cached.promise = mongoose.connect(MONGO_URL, opts, { useUnifiedTopology:true, useIndexes:true }, ).then((mongoose) => {
       return mongoose
     })
   }
   cached.conn = await cached.promise
+  console.log("Connected to Database: " + cached.conn)
   return cached.conn
+
 }
 
 export default dbConnect

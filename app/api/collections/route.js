@@ -1,28 +1,54 @@
+import { NextResponse } from "next/server";
 import dbConnect from "../../../util/mongo";
-import Collection from "../../../models/Collection";
+import Collection from "../../models/Collection";
 
-const handler = async (req, res) => {
-    const { method } = req;
+
+export async function GET () {
 
     await dbConnect();
 
-    if(method === "GET") {
-        try{
-            const collections = await Collection.find();
-            res.status(200).json(collections)
-        } catch(err) {
-            res.status(500).json(err)
-        }
-    }
-    
-    if(method === "POST") {
-        try{
-            const collection = await Collection.create(req.body);
-            res.status(201).json(collection)
-        } catch(err) {
-            res.status(500).json(err)
-        }
-    }
+    return NextResponse.json({ "message": "You have reached the GET Route"})
+
 }
 
-export default handler;
+
+// export async function GET (request) {
+    
+//     await dbConnect();
+
+//     const { method } = request
+    
+//     try{
+//         const collections = await Collection.find();
+//         NextResponse.json({collections})
+//     } catch(err) {
+//         NextResponse.json({err})
+//     }
+
+
+    
+// }
+
+
+// export async function POST (req, res) {
+//     const { method } = req;
+
+//     await dbConnect();
+
+
+//     try{
+//         const collection = await Collection.create(req.body);
+//         NextResponse.json({collection})
+//     } catch(err) {
+//         NextResponse.json({err})
+//     }
+
+    // if(method === "GET") {
+    //     try{
+    //         const collections = await Collection.find();
+    //         NextResponse.json(collections)
+    //     } catch(err) {
+    //         NextResponse.json(err)
+    //     }
+    // }
+// }

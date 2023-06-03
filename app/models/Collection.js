@@ -18,7 +18,7 @@ const CollectionSchema = new mongoose.Schema({
         type: [{
             name: {type: String, required: true},
             intro: {type: String, required: true},
-            url: {type: url, required: true},
+            url: {type: String, required: true},
             price: {type: Number, required: true}
         }],
     },

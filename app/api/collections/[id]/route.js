@@ -1,4 +1,4 @@
-import dbConnect from "../../../util/mongo";
+import dbConnect from "../../../../util/mongo";
 import Collection from "../../../models/Collection";
 
 const handler = async (req, res) => {
@@ -14,6 +14,7 @@ const handler = async (req, res) => {
             res.status(500).json(err);
         }
     }
+
     if(method === "PUT") {
         try{
             const collection = await Collection.findByIdAndUpdate(id, req.body, {
