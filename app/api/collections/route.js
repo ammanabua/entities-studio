@@ -7,7 +7,33 @@ export async function GET () {
 
     await dbConnect();
 
-    return NextResponse.json({ "message": "You have reached the GET Route"})
+    // const res = await fetch('http://localhost:3000/api/collections');
+
+    // const collections = await res.json()
+
+    // return NextResponse(collections);
+
+    try{
+        const collections = await Collection.find();
+        return NextResponse.json({ collections })
+    } catch (err){
+        return NextResponse.json({ err })
+    }
+
+    // return NextResponse.json({"message": "We are on the GET ROUTE"})
+
+}
+
+export async function POST(request) {
+
+    await dbConnect();
+    
+    const res = await request.json();
+
+    
+    const collection = await Collection.create(res);
+
+    return NextResponse.json({ collection });
 
 }
 

@@ -11,7 +11,6 @@ const CollectionSchema = new mongoose.Schema({
     desc: {
         type: String,
         required: true,
-        maxlength: 200,
     },
 
     images: {
