@@ -7,20 +7,12 @@ export async function GET () {
 
     await dbConnect();
 
-    // const res = await fetch('http://localhost:3000/api/collections');
-
-    // const collections = await res.json()
-
-    // return NextResponse(collections);
-
     try{
         const collections = await Collection.find();
         return NextResponse.json({ collections })
     } catch (err){
         return NextResponse.json({ err })
     }
-
-    // return NextResponse.json({"message": "We are on the GET ROUTE"})
 
 }
 
