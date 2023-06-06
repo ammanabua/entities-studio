@@ -47,8 +47,10 @@ export async function GET(req){
     // return new NextResponse({ req }) 
 }
 
-export async function PUT(){
+export async function PUT(req, res){
     await dbConnect();
+
+    
 
     try{
         const collection = await Collection.findByIdAndUpdate(id, req.body, { new: true,});
