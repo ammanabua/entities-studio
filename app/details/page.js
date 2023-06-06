@@ -15,15 +15,16 @@ const page = () => {
                 width={350}
                 height={280}
                 alt="Directions Please" 
+                className="object-fill"
             />
 
             <h2 className="text-xl pt-8">
                 Directions Please
             </h2>
 
-            <p className="font-rubik font-light w-44 m-auto">There is always help to give, all you have to do is ask.</p>
+            <p className="font-rubik font-light w-40 m-auto text-sm mt-4">There is always help to give, all you have to do is ask.</p>
 
-            <p className="font-rubik font-light my-8">
+            <p className="font-rubik font-light text-sm my-8">
                 4 x 3" Canvas
             </p>
 
