@@ -8,25 +8,35 @@ export async function GET () {
     await dbConnect();
 
     try{
+
         const collections = await Collection.find();
+        console.log('Collections Found!')
         return NextResponse.json({ collections })
-    } catch (err){
-        return NextResponse.json({ err })
+
+    } catch(err){
+        console.log("Error")
+        return NextResponse.json(err.message);
     }
+    
 
 }
 
 export async function POST(request) {
 
     await dbConnect();
-    
+
     const res = await request.json();
-
     
-    const collection = await Collection.create(res);
 
-    return NextResponse.json({ collection });
-
+    try{
+        const collection = await Collection.create(res);
+        console.log('Collection Created!', collection)
+        return NextResponse.json({ collection })
+    } catch(err){
+        console.log('Error', err)
+        return NextResponse.json(err.message);
+    }
+    
 }
 
 

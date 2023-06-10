@@ -1,3 +1,4 @@
+import Flipbook from '@/app/components/Flipbook'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -26,9 +27,7 @@ const page = () => {
         </div>
 
         <div className='border-dashed border-black border-4 mb-16'>
-            <h2>
-                The FLIPBOOK
-            </h2>
+            <Flipbook />
         </div>
 
         <div className='flex justify-center w-full'>

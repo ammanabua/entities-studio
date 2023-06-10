@@ -14,8 +14,8 @@ const page = () => {
                 src='/tamas-art/directions-live.jpg'
                 width={350}
                 height={280}
-                alt="Directions Please" 
-                className="object-fill"
+                alt="Directions Please"
+                layout="responsive" 
             />
 
             <h2 className="text-xl pt-8">

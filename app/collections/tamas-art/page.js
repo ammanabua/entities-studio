@@ -4,16 +4,16 @@ import Link from 'next/link'
 import { collections } from '../../data'
 
 const page = () => {
-
-    console.log(collections.map(collection => collection.title));
     
   return (
     <section className='bg-[#FF6868] pb-4'>
         <div className='w-full flex-col'>
         
-            <h2 className='font-barrio text-3xl text-center mb-16'>Tamas Art</h2>
+            <h2 className='font-barrio text-3xl text-center py-16'>Tamas Art</h2>
 
-            <div className='grid grid-cols-1 align-center'>
+            <div className='grid grid-cols-1 align-center md:grid-cols-2 justify-center lg:grid-cols-3'>
+                
+                
                 <div className='m-auto w-2/3'>
                     <Image
                         src='/tamas-art/get-home-safe.webp'
@@ -26,7 +26,7 @@ const page = () => {
 
                 </div>
 
-                <div className='m-auto w-2/3 mt-12'>
+                <div className='m-auto w-2/3 mt-12 row-span-2 content-center'>
                     <Image
                         src='/tamas-art/smiles.webp'
                         width={258}
@@ -137,7 +137,7 @@ const page = () => {
 
         </div>
         <div className='flex w-full mt-24 mb-4 justify-center'>
-            <Link href="/collections" className='font-rubik bg-gray-300 text-center uppercase font-bold p-3 w-5/6 border-none text-sm'>
+            <Link href="/collections" className='font-rubik bg-gray-300 text-center uppercase font-bold p-6 w-80 border-none text-sm'>
                 Back to Collections
             </Link>
         </div>
