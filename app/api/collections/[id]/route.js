@@ -2,60 +2,31 @@ import { NextRequest, NextResponse } from "next/server";
 import dbConnect from "../../../../util/mongo";
 import Collection from "../../../models/Collection";
 
-// const handler = async (req, res) => {
-//     const { method, query:{id} } = req;
 
-//     await dbConnect();
+export async function GET(req, { params }){
 
-//     if(method === "GET") {
-//         try{
-//             const collection = await Collection.findById(id);
-//             res.status(200).json(collection);
-//         } catch(err) {
-//             res.status(500).json(err);
-//         }
-//     }
-
-//     if(method === "PUT") {
-//         try{
-//             const collection = await Collection.findByIdAndUpdate(id, req.body, {
-//                 new: true,
-//             });
-//             res.status(200).json(collection);
-//         } catch(err) {
-//             res.status(500).json(err);
-//         }
-//     }
-//     if(method === "DELETE") {}
-// }
-
-
-export async function GET(req){
-
-    
     await dbConnect();
 
-    
-    return new NextResponse({ req });
-    // try{
-    //     const collection = await Collection.findById(collectionId);
-    //     NextResponse.json({ collection })
-    // } catch (err){
-    //     NextResponse.json({ err })
-    // }
+    try{
 
-    // return new NextResponse({ req }) 
+        const collection = await Collection.findById(params.id)
+        return NextResponse.json(collection)
+    } catch (err) {
+        console.log("Error: ")
+        return NextResponse.json({ collection })
+    }    
+    
 }
 
-export async function PUT(req, res){
+export async function PUT(req, { params }){
     await dbConnect();
-
-    
 
     try{
         const collection = await Collection.findByIdAndUpdate(id, req.body, { new: true,});
-        NextResponse.status(200).json({ collection })
+        console.log('Collection Updated!')
+        NextResponse.json({ collection })
     } catch(err) {
-        NextResponse.status(500).json({ err })
+        console.log("Error: ")
+        return NextResponse.json(err.message)
     }
 }
