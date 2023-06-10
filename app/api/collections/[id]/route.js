@@ -30,3 +30,9 @@ export async function PUT(req, { params }){
         return NextResponse.json(err.message)
     }
 }
+
+export async function DELETE(req, { params }){
+    await dbConnect()
+
+    
+}

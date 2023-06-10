@@ -19,12 +19,17 @@ export async function GET () {
 export async function POST(request) {
 
     await dbConnect();
-    
+
     const res = await request.json();
-
     
-    const event = await Event.create(res);
 
-    return NextResponse.json({ event });
-
+    try{
+        const event = await Event.create(res);
+        console.log('Event Created!')
+        return NextResponse.json({ event })
+    } catch(err){
+        console.log('Error')
+        return NextResponse.json(err.message);
+    }
+    
 }
