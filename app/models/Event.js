@@ -5,25 +5,21 @@ const EventSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true,
-        maxlength: 60,
     },
 
     location: {
         type: String,
         required: true,
-        maxlength: 200,
     },
 
-    theme: {
+    type: {
         type: String,
         required: true,
-        maxlength: 200,
     },
 
     host: {
         type: String,
         required: true,
-        maxlength: 200,
     },
 
     price: {

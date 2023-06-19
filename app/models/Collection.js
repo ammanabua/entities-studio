@@ -13,12 +13,10 @@ const CollectionSchema = new mongoose.Schema({
         required: true,
     },
 
-    images: {
+    items: {
         type: [{
-            name: {type: String, required: true},
-            intro: {type: String, required: true},
-            url: {type: String, required: true},
-            price: {type: Number, required: true}
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Art"
         }],
     },
 
