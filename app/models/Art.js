@@ -12,11 +12,6 @@ const ArtSchema = new mongoose.Schema({
         required: true
     },
 
-    image: {
-        type: String,
-        required: true
-    },
-
     isOwned: {
         type: Boolean,
         default: false,
