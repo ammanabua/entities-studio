@@ -17,14 +17,10 @@ const ArtSchema = new mongoose.Schema({
         required: true
     },
 
-    tag: {
-        type: String,
-    },
-
     isOwned: {
         type: Boolean,
         default: false,
     }
-}, {timestamps: true})
+})
 
 export default mongoose.models.Image || mongoose.model('Art', ArtSchema);
