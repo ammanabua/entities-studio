@@ -2,6 +2,11 @@ import Image from "next/image"
 import Link from "next/link"
 
 export default function Navbar () {
+
+    // const [open, setOpen] = useState(false);
+    // const handleOpen = () => setOpen(true);
+    // const handleClose = () => setOpen(false);
+
     return(
         <nav className="font-krona flex w-full align-center justify-between box-border top-0 left-0 right-0 p-2">
             <Link href="/">
@@ -35,7 +40,7 @@ export default function Navbar () {
                 </svg>
                 </button>
             </div>
-            <div className="hidden mobile-menu">
+            <div className="mobile-menu absolute bg-white">
                 <ul className="">
                     <Link href="/collections" className="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Collections</Link>
                     <Link href="/events" className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Events</Link>

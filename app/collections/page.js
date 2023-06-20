@@ -4,14 +4,14 @@ import Link from 'next/link'
 
 const page = () => {
   return (
-    <section className='w-full flex justify-center text-center pt-32'> 
-            
-
-        <div className='w-full px-8 flex-col'>
+    <section className='w-full flex-col md:flex justify-center text-center pt-32'> 
             
             <h2 className='text-2xl font-semibold mb-10 tracking-wider  md:text-4xl'>New and old bits.. </h2>
 
-            <div className='my-16 flex-col md:flex-row justify-center align-center'>
+        <div className='px-8'>
+            
+
+            <div className='my-16 flex-col md:flex justify-center align-center'>
                 <div className='w-1/2'>
                     <Image
                         src='/collection1.png'
@@ -19,7 +19,6 @@ const page = () => {
                         height={252}
                         alt="Family Portrait"
                         className='m-auto align-center'
-                        layout='responsive'
                     />
                 </div>
                 

@@ -17,6 +17,10 @@ const ArtSchema = new mongoose.Schema({
         required: true
     },
 
+    tag: {
+        type: String,
+    },
+
     isOwned: {
         type: Boolean,
         default: false,
