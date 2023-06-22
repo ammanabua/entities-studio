@@ -1,6 +1,8 @@
+'use client'
 import Flipbook from '@/app/components/Flipbook'
 import Image from 'next/image'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 const page = () => {
   return (
@@ -9,16 +11,22 @@ const page = () => {
             Family Portrait
         </h2>
 
-        <div className='bg-[#EBE6D3] h-screen py-28 px-12 flex-col align-center'>
-            <h3 className='text-xl text-left'>Voids</h3>
-            <p className='font-rubik text-left text-xl font-light tracking-wide mb-12'>Patience comes at a price, when you live on dreams and hopes. Bide your time, wait your turn - a pit of wants are formed as you ignore the world around you.</p>
+        <div className='bg-[#EBE6D3] py-28 px-4 md:flex justify-center align-center items-center'>
+            <div className='md:w-1/2'>
+                <h3 className='text-xl md:text-4xl md:font-bold text-left'>Voids</h3>
+                <p className='font-rubik text-left text-xl font-light tracking-wide mb-12'>Patience comes at a price, when you live on dreams and hopes. Bide your time, wait your turn - a pit of wants are formed as you ignore the world around you.</p>
+            </div>
             
-            <Image
-                src='/family-portrait/Voids.jpg.webp'
-                width={295}
-                height={223}
-                alt="Voids"
-            />
+            <motion.div  
+                className='md:w-1/2'>
+                <Image
+                    src='/family-portrait/Voids.jpg.webp'
+                    width={295}
+                    height={223}
+                    alt="Voids"
+                    layout='responsive'
+                />
+            </motion.div>
         </div>
 
         <div className='mt-12'>
@@ -36,10 +44,11 @@ const page = () => {
                 width={250}
                 height={250}
                 alt="Family Portrait"
+                layout='responsive'
             />
         </div>
         <div className='flex - justify-center w-full'>
-            <Link href="/collections" className='font-rubik bg-gray-300 uppercase font-bold p-3 w-5/6 border-none text-center text-sm mt-20'>
+            <Link href="/collections" className='font-rubik bg-gray-300 uppercase font-bold p-3 w-80 border-none text-center text-sm mt-20'>
                 Back to Collections
             </Link>
         </div>

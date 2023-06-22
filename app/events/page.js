@@ -6,7 +6,7 @@ const page = () => {
   return (
     <section className=''>
       <div className='h-screen flex justify-center bg-white border-gray-700 border-2 mt-16 pt-12 w-5/6 m-auto'>
-        <div className='flex-col align-center text-left'>
+        <div className='flex-col md:flex align-center text-left'>
           <div className='flex justify-center'>
             <Image
               src='/event.png'

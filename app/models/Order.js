@@ -9,7 +9,8 @@ const OrderSchema = new mongoose.Schema({
 
     details: {
         type: [{
-
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Art"
         }]
     },
 
