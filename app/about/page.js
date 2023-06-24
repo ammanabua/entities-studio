@@ -10,7 +10,7 @@ export default function About() {
           width={308}
           height={262}
           alt='Chimdi - Entities Studio Artist' 
-          layout='responsive'
+          style={{objectFit: "cover"}}
         />
 
         <p className='font-rubik pt-10 tracking-wider text-lg px-4'>“Making sure that dreams and moments do not fade away without being acknowledged”</p>

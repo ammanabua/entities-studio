@@ -1,5 +1,5 @@
 'use client'
-import Flipbook from '@/app/components/Flipbook'
+import Flipbook from '@/components/Flipbook'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
@@ -24,7 +24,6 @@ const page = () => {
                     width={295}
                     height={223}
                     alt="Voids"
-                    layout='responsive'
                 />
             </motion.div>
         </div>
