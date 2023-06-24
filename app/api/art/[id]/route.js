@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import dbConnect from "../../../../util/mongo";
-import Collection from "../../../models/Collection";
+import Art from "../../../models/Art";
 
 
 export async function GET(req, { params }){
@@ -9,11 +9,11 @@ export async function GET(req, { params }){
 
     try{
 
-        const collection = await Collection.findById(params.id)
-        return NextResponse.json(collection)
+        const art = await Art.findById(params.id)
+        return NextResponse.json(art)
     } catch (err) {
         console.log("Error: ")
-        return NextResponse.json({ collection })
+        return NextResponse.json(err.message)
     }    
     
 }
@@ -26,9 +26,9 @@ export async function PUT(req, { params }){
     const res = await req.json();
 
     try{
-        const collection = await Collection.findByIdAndUpdate(id, res, { new: true,});
+        const art = await Art.findByIdAndUpdate(id, res, { new: true,});
         console.log('Collection Updated!')
-        NextResponse.json({ collection })
+        NextResponse.json({ art })
     } catch(err) {
         console.log("Error: ")
         return NextResponse.json(err.message)
@@ -43,9 +43,9 @@ export async function DELETE(req, { params }){
     if(!id) return NextResponse.json({"message": "Collection Id required"});
 
     try{
-        const collection = await Collection.findByIdAndDelete(id);
+        const art = await Art.findByIdAndDelete(id);
         
-        return NextResponse.json({"message": "Collection successfully deleted", collection});
+        return NextResponse.json({"message": "Collection successfully deleted", art});
 
     } catch (err) {
         console.log("Error")

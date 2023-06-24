@@ -7,6 +7,11 @@ const ArtSchema = new mongoose.Schema({
         required: true
     },
 
+    slug: {
+        type: String,
+        required: true
+    },
+
     desc: {
         type: String,
         required: true

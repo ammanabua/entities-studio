@@ -17,15 +17,17 @@ const page = () => {
                 <p className='font-rubik text-left text-xl font-light tracking-wide mb-12'>Patience comes at a price, when you live on dreams and hopes. Bide your time, wait your turn - a pit of wants are formed as you ignore the world around you.</p>
             </div>
             
-            <motion.div  
-                className='md:w-1/2'>
-                <Image
-                    src='/family-portrait/Voids.jpg.webp'
-                    width={295}
-                    height={223}
-                    alt="Voids"
-                />
-            </motion.div>
+            <Link href="/collections/family-portrait/details">
+                <motion.div  
+                    className='md:w-1/2'>
+                    <Image
+                        src='/family-portrait/Voids.jpg.webp'
+                        width={295}
+                        height={223}
+                        alt="Voids"
+                        />
+                </motion.div>
+            </Link>
         </div>
 
         <div className='mt-12'>
