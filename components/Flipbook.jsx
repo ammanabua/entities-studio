@@ -21,8 +21,8 @@ export default async function Flipbook () {
   // console.log(data)
   
   return (
-    <section className='h-screen p-8 align-center flex-col items-center'>
-      <div className='bg-blue-200 h-3/4'>
+    <section className='h-screen w-1/2 align-center flex-col'>
+      <div className='bg-blue-200 h-3/4  items-center'>
         <div>Family Portrait</div>
       </div>
     </section>

@@ -4,13 +4,13 @@ import Image from 'next/image'
 const page = () => {
   return (
     <section className='bg-[#FF6868] w-full flex justify-center'>
-      <div className='flex-col align-center justify-between mt-32 mb-4'>
+      <div className='flex-col align-center justify-between mt-32 mb-4 w-100'>
         <Image
           src='/tamas-art/fascination-dg.png'
           width={308}
           height={231}
           alt="tamas art" 
-          className='mb-8'
+          className='mb-8 w-full'
         />
 
 
@@ -20,6 +20,7 @@ const page = () => {
           width={308}
           height={231}
           alt='tamas art fascination live'
+          className=''
         />
 
         <h2 className='text-3xl my-12'>A Fascination</h2>

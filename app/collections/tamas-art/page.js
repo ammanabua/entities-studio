@@ -13,18 +13,19 @@ const page = () => {
 
             <div className='grid grid-cols-1 align-center md:grid-cols-2 justify-center lg:grid-cols-3'>
                 
-                
-                <div className='m-auto w-2/3'>
-                    <Image
-                        src='/tamas-art/get-home-safe.webp'
-                        width={258}
-                        height={197}
-                        alt="Get Home Safe" 
-                    />
-                    <p className='underline text-xl mt-8'>Art</p>
-                    <p className='text-3xl'>“Get Home Safe”</p>
+                <Link href='/collections/tamas-art/details'>
+                    <div className='m-auto w-2/3'>
+                        <Image
+                            src='/tamas-art/get-home-safe.webp'
+                            width={258}
+                            height={197}
+                            alt="Get Home Safe" 
+                        />
+                        <p className='underline text-xl mt-8'>Art</p>
+                        <p className='text-3xl'>“Get Home Safe”</p>
 
-                </div>
+                    </div>
+                </Link>
 
                 <div className='m-auto w-2/3 mt-12 row-span-2 content-center'>
                     <Image

@@ -22,7 +22,7 @@ const Footer = () => {
         <li>Tik.</li>
       </ul>
 
-      <div className="text-white text-lg flex m-auto justify-between w-96">
+      <div className="text-white text-lg flex m-auto justify-between w-80 md:w-96">
         <h2>Projects</h2>
         <h2>About</h2>
         <h2>Privacy</h2>
