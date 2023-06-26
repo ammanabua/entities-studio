@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from "next/legacy/image"
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import Link from 'next/link'

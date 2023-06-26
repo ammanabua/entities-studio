@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/image'
+import Image from "next/legacy/image"
 
 const page = () => {
   return (
@@ -7,10 +7,13 @@ const page = () => {
       <div className='flex-col align-center justify-between mt-32 mb-4 w-100'>
         <Image
           src='/tamas-art/fascination-dg.png'
-          width={308}
-          height={231}
+          width={616}
+          height={462}
           alt="tamas art" 
-          className='mb-8 w-full'
+          className='mb-8 w-full m-auto'
+          objectFit='cover'
+          layout='responsive'        
+          
         />
 
 
