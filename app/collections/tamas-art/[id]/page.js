@@ -1,20 +1,23 @@
 import React from 'react'
-import Image from "next/legacy/image"
+import Image from "next/image"
 
 const page = () => {
   return (
     <section className='bg-[#FF6868] w-full flex justify-center'>
       <div className='flex-col align-center justify-between mt-32 mb-4 w-100'>
+        
         <Image
           src='/tamas-art/fascination-dg.png'
           width={616}
           height={462}
-          alt="tamas art" 
+          alt="tamas art"
           className='mb-8 w-full m-auto'
-          objectFit='cover'
-          layout='responsive'        
-          
-        />
+          sizes="100vw"
+          style={{
+            width: "100%",
+            height: "auto",
+            objectFit: "cover"
+          }} />
 
 
 
@@ -24,7 +27,10 @@ const page = () => {
           height={231}
           alt='tamas art fascination live'
           className=''
-        />
+          style={{
+            maxWidth: "100%",
+            height: "auto"
+          }} />
 
         <h2 className='text-3xl my-12'>A Fascination</h2>
 
@@ -47,7 +53,7 @@ const page = () => {
       </div>
 
     </section>
-  )
+  );
 }
 
 export default page

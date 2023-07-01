@@ -1,4 +1,4 @@
-import Image from "next/legacy/image"
+import Image from "next/image"
 import Link from "next/link"
 
 const Footer = () => {
@@ -11,7 +11,10 @@ const Footer = () => {
             width={220}
             height={120}
             alt="Entities Studio"
-          />
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
         </div>
       </Link>
       <h2 className="text-white text-xl my-5">ENTITIES.STUDIO</h2>
@@ -32,7 +35,7 @@ const Footer = () => {
 
       <p className="text-white text-sm font-rubik mt-32">&copy; 2022 Entities Studio. Built in my <br /><span className="underline font-medium">Sparetime</span></p>
     </section>
-  )
+  );
 }
 
 export default Footer

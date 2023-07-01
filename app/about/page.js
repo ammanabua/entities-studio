@@ -1,4 +1,4 @@
-import Image from "next/legacy/image"
+import Image from "next/image"
 import Link from 'next/link'
 
 export default function About() {
@@ -9,9 +9,12 @@ export default function About() {
           src='/chimdi.png'
           width={308}
           height={262}
-          alt='Chimdi - Entities Studio Artist' 
-          layout='responsive'
-        />
+          alt='Chimdi - Entities Studio Artist'
+          sizes="100vw"
+          style={{
+            width: "100%",
+            height: "auto"
+          }} />
 
         <p className='font-rubik pt-10 tracking-wider text-lg px-4'>“Making sure that dreams and moments do not fade away without being acknowledged”</p>
         <p className='uppercase font-rubik text-xl font-bold py-4'>~ chimdi</p>
@@ -21,8 +24,11 @@ export default function About() {
             src='/head.png'
             width={70}
             height={46}
-            alt='Entities Studio' 
-          />
+            alt='Entities Studio'
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
 
         </div>
         <ul className="w-40 justify-between flex justify-center text-black my-4 m-auto">
@@ -33,5 +39,5 @@ export default function About() {
         </ul>
       </div>
     </section>
-  )
+  );
 }
