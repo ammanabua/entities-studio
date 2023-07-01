@@ -1,7 +1,19 @@
+'use client'
 import Image from "next/image"
 import Link from "next/link"
+import { useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
+import { Button, Modal, Box, Typography } from "@mui/material";
 
 export default function Navbar () {
+
+    const { events } = useRouter()
+    const [open, setOpen] = useState(false)
+
+    const handleOpen = () => setOpen(true)
+    const handleClose = () => setOpen(false)
+
+    console.log(events)
     return (
         <nav className="font-krona flex w-full align-center justify-between box-border top-0 left-0 right-0 p-2">
             <Link href="/">
@@ -16,14 +28,14 @@ export default function Navbar () {
                     }} />
             </Link>
 
-            <ul className="justify-between items-center w-1/4 list-none font-krona text-lg hidden lg:flex space-x-8">
+            <ul className="justify-between items-center w-1/4 list-none bg-none font-krona text-lg hidden lg:flex space-x-8">
                 <Link className="hover:underline" href='/collections'>Collections</Link>
                 <Link className="hover:underline" href='/events'>Events</Link>
                 <Link className="hover:underline" href='/about'>Bio</Link>
             </ul>
 
             <div className="lg:invisible flex items-center">
-                <button className="outline-none mobile-menu-button p-4">
+                <button onClick={handleOpen} className="outline-none mobile-menu-button p-4">
                 <svg
                     className="w-6 h-6 text-black"
                     x-show="!showMenu"
@@ -38,13 +50,29 @@ export default function Navbar () {
                 </svg>
                 </button>
             </div>
-            <div className="hidden mobile-menu">
-                <ul className="">
-                    <Link href="/collections" className="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Collections</Link>
-                    <Link href="/events" className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Events</Link>
-                    <Link href="/about" className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Bio</Link>
+
+            <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+            >
+            <Box className="absolute w-full h-screen bg-white p-4">
+                <Box className="flex justify-between items-center">
+                    <Link href='/' onClick={handleClose}>
+                        <Image src='/head.png' height={70} width={95} alt="Entities Studo" />
+                    </Link>
+                    <Typography onClick={handleClose}>
+                        X
+                    </Typography>
+                </Box>
+                <ul className="bg-transparent pt-36 font-rubik text-3xl font-light">
+                    <Link href="/collections" className="block px-2 py-4" onClick={handleClose}>Collections</Link>
+                    <Link href="/events" className="block px-2 py-4 hover:bg-green-500 transition duration-300" onClick={handleClose}>Events</Link>
+                    <Link href="/about" className="block px-2 py-4 hover:underline" onClick={handleClose}>Bio</Link>
                 </ul>
-            </div>
+            </Box>
+            </Modal>
         </nav>
     );
 }
