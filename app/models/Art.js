@@ -29,6 +29,11 @@ const ArtSchema = new mongoose.Schema({
 
     tag: {
         type: String,
+    },
+
+    price: {
+        type: Number,
+        required: true
     }
 })
 

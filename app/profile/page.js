@@ -1,14 +1,15 @@
 'use client'
 import Image from "next/image"
-import { Box, Grid } from "@mui/material"
+import Link from "next/link"
+import { Box, Grid, Typography } from "@mui/material"
 
 
 
 const page = () => {
   return (
-    <section className="h-screen w-full bg-white">
-        <div className="w-full">
-            <h1>Welcome, User</h1>
+    <section className="h-auto w-full bg-white px-12">
+        <div className="w-full py-12">
+            <h1 className="mb-4">Welcome, User</h1>
 
             <Image 
                 src="/user1.png"
@@ -16,19 +17,23 @@ const page = () => {
                 height="0"
                 sizes="100vw"
                 className="w-1/3 lg:w-1/5 h-auto m-auto
-                bg-gray-200 rounded"
+                bg-gray-200 rounded-full p-4"
                 alt="user" 
             />
 
-            <Box className="flex border-1 border-grey-600">
-                <p className="font-rubik text-2xl">Private Collection</p>
-                <Grid className="flex grid-cols-2">
-                    <Box>
-
+            <Box className="border-1 border-grey-600 font-rubik mt-16">
+                <p className="text-lg mb-8">Private Collection</p>
+                <Grid className="">
+                    <Box className="flex border border-grey-300 w-full h-60 justify-center items-center">
+                        <Typography className="">
+                            Your collection is empty!
+                        </Typography>
                     </Box>
-                    <Box>
-                        
-                    </Box>
+                    <div className="mt-4 bg-[#EB6F07] p-4 w-52 text-center hover:bg-gray-200">
+                        <Link href='/collections'>
+                            Explore collections                            
+                        </Link>
+                    </div>
                 </Grid>
             </Box>
         </div>
