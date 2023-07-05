@@ -37,34 +37,9 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-// import { collections } from '../data'
+import {collections} from '../app/data'
 
 
 
@@ -72,31 +47,31 @@ import axios from 'axios'
 
 
 export default async function Flipbook () {
-    const [collections, setCollections] = useState([]);
+  // const [collections, setCollections] = useState([]);
+  // const [loading, setLoading] = useState(false);
 
 
-    useEffect(() => {
-      async function getCollections() {
-        const res = await axios.get('http://localhost:3000/api/collections')
-        
-        const collections = res.data;
-      
-        console.log(collections)
-        setCollections(collections);
-      }
-      getCollections();
-    },[])
-    
-  
+  // useEffect(() => {
+  //   async function getCollections() {
+  //     setLoading(true);
+  //      await fetch('/api/collections')
+  //     .then((response) => {
+  //       response.json()
+  //     }).then((data) => {
+  //       console.log(data);
+  //       setCollections(data)
+  //       setLoading(false)})
+  //   }
+  //   getCollections();
+  // },[])
+
+  // if (loading) return <p>Loading...</p>
+  // if (!data) return <p>No profile data</p>    
   return (
     <section className='h-screen w-1/2 align-center flex-col'>
       <div className='bg-blue-200 h-3/4  items-center'>
         <div>Family Portrait</div>
-        {collections.map((collection) => (
-          <div key={collection.title}>
-              Image Div
-          </div>
-        ))}
+        
       </div>
     </section>
   )

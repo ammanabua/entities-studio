@@ -13,9 +13,8 @@ export default function Navbar () {
     const handleOpen = () => setOpen(true)
     const handleClose = () => setOpen(false)
 
-    console.log(events)
     return (
-        <nav className="font-krona flex w-full align-center justify-between box-border top-0 left-0 right-0 p-2">
+        <nav className="font-krona flex w-full align-center items-center justify-between box-border top-0 left-0 right-0 px-12">
             <Link href="/">
                 <Image
                     src="/head.png"
@@ -34,7 +33,23 @@ export default function Navbar () {
                 <Link className="hover:underline" href='/about'>Bio</Link>
             </ul>
 
-            <div className="lg:invisible flex items-center">
+            <div className='invisible lg:visible'>
+                <div className="flex">
+                    <Link href="/profile" passHref>
+                        <div className='mr-4 pointer'>
+                        <Image src="/user1.png" alt="" width="20" height="20" />
+                        </div>
+                    </Link>
+                    <Link href="/cart" passHref>
+                        <div className='flex'>
+                            <Image src="/cart.png" alt="" width="25" height="25" />
+                            <div className=''>2</div>
+                        </div>
+                    </Link>
+                </div>
+            </div>
+
+            <div className="lg:hidden flex items-center">
                 <button onClick={handleOpen} className="outline-none mobile-menu-button p-4">
                 <svg
                     className="w-6 h-6 text-black"
@@ -57,18 +72,18 @@ export default function Navbar () {
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
             >
-            <Box className="absolute w-full h-screen bg-white p-4">
+            <Box className="absolute w-full h-screen bg-white px-12">
                 <Box className="flex justify-between items-center">
                     <Link href='/' onClick={handleClose}>
                         <Image src='/head.png' height={70} width={95} alt="Entities Studo" />
                     </Link>
-                    <Typography onClick={handleClose}>
+                    <Typography className="text-center" onClick={handleClose}>
                         X
                     </Typography>
                 </Box>
                 <ul className="bg-transparent pt-36 font-rubik text-3xl font-light">
                     <Link href="/collections" className="block px-2 py-4" onClick={handleClose}>Collections</Link>
-                    <Link href="/events" className="block px-2 py-4 hover:bg-green-500 transition duration-300" onClick={handleClose}>Events</Link>
+                    <Link href="/events" className="block px-2 py-4 hover:underline" onClick={handleClose}>Events</Link>
                     <Link href="/about" className="block px-2 py-4 hover:underline" onClick={handleClose}>Bio</Link>
                 </ul>
             </Box>

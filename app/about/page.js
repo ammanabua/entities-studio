@@ -7,14 +7,11 @@ export default function About() {
       <div className='flex-col w-full'>
         <Image
           src='/chimdi.png'
-          width={308}
-          height={262}
-          alt='Chimdi - Entities Studio Artist'
+          width="0"
+          height="0"
           sizes="100vw"
-          style={{
-            width: "100%",
-            height: "auto"
-          }} />
+          className="w-full h-auto"
+          alt="Chimdi - Entities Studio Artist" />
 
         <p className='font-rubik pt-10 tracking-wider text-lg px-4'>“Making sure that dreams and moments do not fade away without being acknowledged”</p>
         <p className='uppercase font-rubik text-xl font-bold py-4'>~ chimdi</p>

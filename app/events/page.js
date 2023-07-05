@@ -5,18 +5,19 @@ import React from 'react'
 const page = () => {
   return (
     <section className=''>
-      <div className='h-screen py-16 px-8 md:h-auto md:flex items-center justify-center bg-white border-gray-700 border-2 w-5/6 m-auto'>
-          <div className='w-full justify-center'>
+      <div className='h-auto py-16 lg:py-2 px-8 md:h-auto md:flex items-center justify-center bg-white border-gray-700 border-2 w-5/6 m-auto'>
+          <div className='w-full md:w-1/2 justify-center'>
             <Image
               src='/event.png'
-              width={265}
-              height={254}
-              alt='Event - Tamas Art Live'
-              className="m-auto"
+              width={0}
+              height={0}
+              sizes="100vw"
+              className="w-full h-auto"
+              alt="Tamas Art Live"
             />
           </div>
 
-          <div className="align-center md:m-auto">
+          <div className="align-center md:m-auto md:w-1/2">
             <h2 className='uppercase text-xl font-bold mt-8 px-4'>Ended</h2>
 
             <Link href='/events/tamas-art-live'>
