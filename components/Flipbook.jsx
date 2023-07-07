@@ -47,31 +47,30 @@ import {collections} from '../app/data'
 
 
 export default async function Flipbook () {
-  // const [collections, setCollections] = useState([]);
-  // const [loading, setLoading] = useState(false);
+  const [collections, setCollections] = useState([]);
+  const [loading, setLoading] = useState(false);
 
 
-  // useEffect(() => {
-  //   async function getCollections() {
-  //     setLoading(true);
-  //      await fetch('/api/collections')
-  //     .then((response) => {
-  //       response.json()
-  //     }).then((data) => {
-  //       console.log(data);
-  //       setCollections(data)
-  //       setLoading(false)})
-  //   }
-  //   getCollections();
-  // },[])
+  useEffect(() => {
+    async function getCollections() {
+      setLoading(true);
+       await fetch('/api/collections')
+      .then((response) => {
+        response.json()
+      }).then((data) => {
+        console.log(data);
+        setCollections(data)
+        setLoading(false)})
+    }
+    getCollections();
+  },[])
 
-  // if (loading) return <p>Loading...</p>
-  // if (!data) return <p>No profile data</p>    
+  if (loading) return <p>Loading...</p>
+  if (!data) return <p>No profile data</p>    
   return (
     <section className='h-screen w-1/2 align-center flex-col'>
       <div className='bg-blue-200 h-3/4  items-center'>
         <div>Family Portrait</div>
-        
       </div>
     </section>
   )

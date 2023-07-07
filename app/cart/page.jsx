@@ -1,13 +1,11 @@
-import styles from "../styles/Cart.module.css"
+'use client'
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import axios from "axios";
 
-import { usePaystackPayment } from "react-paystack";
-import { useRouter } from "next/router";
-import { reset } from "../redux/cartSlice"
-import OrderDetail from "../components/OrderDetail";
+import { useRouter } from "next/navigation";
+import { reset } from "../../redux/cartSlice"
 import Link from "next/link";
 
 
@@ -35,46 +33,46 @@ const Cart = () => {
     }
 
 
-    //PAYSTACK HOOK IMPLEMENTATION
-    const config = {
-        reference: (new Date()).getTime().toString(),
-        email: "user@example.com",
-        amount: cart.total * 100,
-        publicKey: 'pk_test_687a8ebd710403b4c2f5383c6c027d896bd074dc',
-    };
+    // //PAYSTACK HOOK IMPLEMENTATION
+    // const config = {
+    //     reference: (new Date()).getTime().toString(),
+    //     email: "user@example.com",
+    //     amount: cart.total * 100,
+    //     publicKey: 'pk_test_687a8ebd710403b4c2f5383c6c027d896bd074dc',
+    // };
     
-    // you can call this function anything
-    const onSuccess = (reference) => {
-      // Implementation for whatever you want to do with reference and after success call.
-        const shipping = {
-            name:{
-                full_name: "Jimmy Carter"
-            },
-            address: {
-                address_line_1: "Ezimba Street"
-            }
-        }
+    // // you can call this function anything
+    // const onSuccess = (reference) => {
+    //   // Implementation for whatever you want to do with reference and after success call.
+    //     const shipping = {
+    //         name:{
+    //             full_name: "Jimmy Carter"
+    //         },
+    //         address: {
+    //             address_line_1: "Ezimba Street"
+    //         }
+    //     }
 
-        createOrder({
-            customer:shipping.name.full_name,
-            address: shipping.address.address_line_1,
-            telephone: 9059646709,
-            total: cart.total,
-            method: 0,
+    //     createOrder({
+    //         customer:shipping.name.full_name,
+    //         address: shipping.address.address_line_1,
+    //         telephone: 9059646709,
+    //         total: cart.total,
+    //         method: 0,
         
-        });
+    //     });
 
-      console.log(reference);
-    };
+    //   console.log(reference);
+    // };
   
-    // you can call this function anything
-    const onClose = () => {
-      // implementation for  whatever you want to do when the Paystack dialog closed.
-      console.log('closed')
-    }
+    // // you can call this function anything
+    // const onClose = () => {
+    //   // implementation for  whatever you want to do when the Paystack dialog closed.
+    //   console.log('closed')
+    // }
   
     
-    const initializePayment = usePaystackPayment(config);
+    // const initializePayment = usePaystackPayment(config);
 
     //END OF PAYSTACK HOOK IMPLEMENTATION
 
@@ -151,9 +149,7 @@ const Cart = () => {
                         
                         {open ? (
                             <div>
-                                <button className={styles.paystackButton} onClick={() => {
-                                    initializePayment(onSuccess, onClose)
-                                }}>Paystack</button>
+                                <button className={styles.paystackButton}>Pay with Stripe</button>
 
                                 <button className={styles.payButton} onClick={() => setCash(true)}>Cash on Delivery</button>
                             </div>
@@ -162,11 +158,7 @@ const Cart = () => {
                         )}
                     </div>
                 </div>
-            </div>
-            {cash && (
-                <OrderDetail total={cart.total} createOrder={createOrder} />
-            )}
-        
+            </div>        
         </>
     )
 
