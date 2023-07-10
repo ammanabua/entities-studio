@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function About() {
   return (
-    <section className="flex min-h-screen text-center justify-center p-2 w-5/6 m-auto">
+    <section className="flex min-h-screen text-center justify-center p-2 w-5/6 m-auto mt-24">
       <div className='flex-col w-full'>
         <Image
           src='/chimdi.png'

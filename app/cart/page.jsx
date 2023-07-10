@@ -79,17 +79,17 @@ const Cart = () => {
     const EmptyCart = () => (
         <div variant="subtitle1">Your Cart is empty, 
             <Link href="/" passHref>
-                <a>Pick some items!</a>
+                Pick some items!
             </Link>
         </div>
     );
 
     const FilledCart = () => (
         <>
-            <div className={styles.left}>
-                <table className={styles.table}>
+            <div className='flex flex-2'>
+                <table className=''>
                     <tbody>
-                        <tr className={styles.trTitle}>
+                        <tr className=''>
                             <th>Product</th>
                             <th>Name</th>
                             <th>Extras</th>
@@ -100,61 +100,61 @@ const Cart = () => {
                     </tbody>
                     <tbody>
                         {cart.products.map((product) => (
-                            <tr className={styles.tr} key={product._id}>
+                            <tr className='' key={product._id}>
                                 <td>
-                                    <div className={styles.imgContainer}>
-                                        <Image className={styles.img} src={product.img} layout="fill" objectFit="cover" alt="" />
+                                    <div className=''>
+                                        <Image className='' src={product.img} layout="fill" objectFit="cover" alt="" />
                                     </div>
                                 </td>
                                 <td>
-                                    <span className={styles.name}>{product.title}</span>
+                                    <span className=''>{product.title}</span>
                                 </td>
                                 <td>
-                                    <span className={styles.extras}>
+                                    <span className=''>
                                         {product.extras.map((extra) => (
                                             <span key={extra._id}>{extra.text}</span>
-                                        ))}
+                                         ))}
                                     </span>
                                 </td>
                                 <td>
-                                    <span className={styles.price}>{product.price}</span>
+                                    <span className=''>{product.price}</span>
                                 </td>
                                 <td>
-                                    <span className={styles.quantity}>{product.quantity}</span>
+                                    <span className=''>{product.quantity}</span>
                                 </td>
                                 <td>
-                                    <span className={styles.total}>{product.price * product.quantity}</span>
+                                    <span className=''>{product.price * product.quantity}</span>
                                 </td>
                             </tr>
                         ))}
                     </tbody>
                 </table>
             </div>
-            <div className={styles.right}>
-                <div className={styles.wrapper}>
-                    <h2 className={styles.title}>Cart Total</h2>
-                    <div className={styles.totalText}>
-                        <b className={styles.totalTextTitle}>Subtotal: </b> {cart.total}
+            <div className='flex flex-1'>
+                <div className=''>
+                    <h2 className=''>Cart Total</h2>
+                    <div className=''>
+                        <b className=''>Subtotal: </b> {cart.total}
                     </div>
-                    <div className={styles.totalText}>
-                        <b className={styles.totalTextTitle}>Discount: </b> N0.00
+                    <div className=''>
+                        <b className=''>Discount: </b> N0.00
                     </div>
-                    <div className={styles.totalText}>
-                        <b className={styles.totalTextTitle}>Delivery: </b> N0.00
+                    <div className=''>
+                        <b className=''>Delivery: </b> N0.00
                     </div>
-                    <div className={styles.totalText}>
-                        <b className={styles.totalTextTitle}>Total: </b> {cart.total}
+                    <div className=''>
+                        <b className=''>Total: </b> {cart.total}
                     </div>
-                    <div className={styles.paymentMethods}>
+                    <div className=''>
                         
                         {open ? (
                             <div>
-                                <button className={styles.paystackButton}>Pay with Stripe</button>
+                                <button className=''>Pay with Stripe</button>
 
-                                <button className={styles.payButton} onClick={() => setCash(true)}>Cash on Delivery</button>
+                                <button className='' onClick={() => setCash(true)}>Cash on Delivery</button>
                             </div>
                         ) : (
-                            <button onClick={() => setOpen(true)} className={styles.button}>CHECKOUT</button>
+                            <button onClick={() => setOpen(true)} className=''>CHECKOUT</button>
                         )}
                     </div>
                 </div>
@@ -165,11 +165,11 @@ const Cart = () => {
 console.log(cart);
   return (
     <>
-        <div className={styles.main}>
-            <h1 className={styles.title}>Shopping Cart</h1>
+        <div className=''>
+            <h1 className=''>Shopping Cart</h1>
 
-            <div className={styles.container}>
-                { !cart.products.length ? <EmptyCart /> : <FilledCart />}
+            <div className=''>
+                 <EmptyCart />
             </div>
         </div>
     </>

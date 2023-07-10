@@ -34,7 +34,7 @@ export default function Navbar () {
             </ul>
 
             <div className='invisible lg:visible'>
-                <div className="flex">
+                <div className="flex items-center">
                     <Link href="/profile" passHref>
                         <div className='mr-4 pointer'>
                         <Image src="/user1.png" alt="" width="20" height="20" />

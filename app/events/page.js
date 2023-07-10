@@ -4,9 +4,9 @@ import React from 'react'
 
 const page = () => {
   return (
-    <section className=''>
-      <div className='h-auto py-16 lg:py-2 px-8 md:h-auto md:flex items-center justify-center bg-white border-gray-700 border-2 w-5/6 m-auto'>
-          <div className='w-full md:w-1/2 justify-center'>
+    <section className='mt-24'>
+      <div className='h-auto md:py-24 lg:py-16 lg:py-2 px-8 md:h-auto md:flex items-center justify-between bg-white border-gray-700 border-2 w-5/6 m-auto'>
+          <div className='w-full md:w-1/2 justify-center m-auto md:mx-4 md:order-2'>
             <Image
               src='/event.png'
               width={0}
@@ -25,17 +25,17 @@ const page = () => {
             </Link>
 
             <div className='w-full bg-[#d5d5d5] font-rubik m-auto tracking-wider'>
-              <p className='mt-8 px-4 py-8 text-sm'>90s Themed Red Carpet Funky Disco Party</p>
-              <p className='text-sm text-right px-4 pb-4'>⚡ Powered by <span>@Ifyscocktails</span></p>
+              <p className='mt-4 px-4 py-4 text-sm'>90s Themed Red Carpet Funky Disco Party</p>
+              <p className='text-sm text-right pr-4 pb-4'>⚡ Powered by <span>@Ifyscocktails</span></p>
             </div>
           </div>
       </div>
       
 
-      <p className='my-20 w-4/6 font-bold text-black opacity-70 ml-8 text-xl'>good things come to those who wait..</p>
+      <p className='my-20 w-4/6 font-bold text-black opacity-70 ml-12 md:ml-20 text-xl'>good things come to those who wait..</p>
 
       <div className='flex w-full mt-24 mb-4 justify-center'>
-        <Link href="/collections" className='font-rubik bg-gray-300 text-center uppercase font-bold p-3 w-96 border-none text-sm'>
+        <Link href="/collections" className='font-rubik bg-gray-300 text-center uppercase font-bold p-3 w-96 h-12 border-none text-sm'>
             Explore Collections
         </Link>
       </div>

@@ -24,11 +24,11 @@ const FamilyPortraitSlider = ({ images }) => {
 
 
   return (
-    <div className='bg-[#EBE6D3] py-28 px-12 justify-center align-center items-center w-full'>
-        <div className='sm:flex'>
-            <div className='w-full md:w-1/2'>
-                <h3 className='text-xl md:text-4xl md:font-bold text-left'>{images[currentIndex].name}</h3>
-                <p className='font-rubik text-left text-xl font-light tracking-wide mb-12 w-full'>{images[currentIndex].intro}</p>
+    <div className='bg-[#EBE6D3] py-28 px-12 justify-center align-center w-full'>
+        <div className='sm:flex items-center'>
+            <div className='w-full md:w-1/2 px-8'>
+                <h3 className='text-xl md:text-4xl md:font-bold text-left tracking-wide'>{images[currentIndex].name}</h3>
+                <p className='font-rubik text-left text-xl font-light tracking-wide mb-12 w-full tracking-wide'>{images[currentIndex].intro}</p>
             </div>
             
             <motion.div  
