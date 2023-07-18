@@ -11,6 +11,9 @@ module.exports = {
         'krona': ['Krona One', 'sans-serif'],
         'rubik': ['Rubik' , 'sans-serif'],
         'barrio': ['Barrio', 'sans-serif']
+      },
+      backgroundImage: {
+        'gradient-90': 'linear-gradient(90deg, var(--tw-gradient-stops))'
       }
     },
   },

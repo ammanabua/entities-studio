@@ -6,12 +6,12 @@ import { collections } from '../../data'
 const page = () => {
     
   return (
-      <section className='bg-[#FF6868] pb-4'>
-          <div className='w-full flex-col'>
+      <section className='bg-[#FF6868] pb-4 flex justify-center w-full'>
+          <div className='flex-col'>
           
               <h2 className='font-barrio text-3xl text-center py-16'>Tamas Art</h2>
 
-              <div className='grid grid-cols-1 align-center md:grid-cols-2 justify-center lg:grid-cols-3'>
+              <div className='grid grid-cols-1 align-center sm:grid-cols-2 justify-center lg:grid-cols-3 w-full px-16'>
                   
                   <Link href='/collections/tamas-art/details'>
                       <div className='m-auto w-2/3'>
@@ -20,10 +20,8 @@ const page = () => {
                               width={258}
                               height={197}
                               alt="Get Home Safe"
-                              style={{
-                                  maxWidth: "100%",
-                                  height: "auto"
-                              }} />
+                              className="w-full h-auto"
+                            />
                           <p className='underline text-xl mt-8'>Art</p>
                           <p className='text-3xl'>“Get Home Safe”</p>
 
@@ -166,11 +164,11 @@ const page = () => {
                   </div>
               </div>
 
-          </div>
-          <div className='flex w-full mt-24 mb-4 justify-center'>
-              <Link href="/collections" className='font-rubik bg-gray-300 text-center uppercase font-bold p-6 w-80 border-none text-sm'>
-                  Back to Collections
-              </Link>
+                <div className='flex w-full mt-24 mb-4 justify-center'>
+                    <Link href="/collections" className='font-rubik bg-gray-300 text-center uppercase font-bold p-6 w-80 border-none text-sm'>
+                        Back to Collections
+                    </Link>
+                </div>
           </div>
       </section>
   );

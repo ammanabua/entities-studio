@@ -165,7 +165,7 @@ const Cart = () => {
 console.log(cart);
   return (
     <>
-        <div className=''>
+        <div className='min-h-screen bg-white flex-col justify-centre items-center align-center'>
             <h1 className=''>Shopping Cart</h1>
 
             <div className=''>

@@ -10,11 +10,11 @@ export default async function page () {
 
 
     return (
-        <section className='w-full flex-col justify-center text-center pt-32'> 
+        <section className='w-full flex-col justify-center text-center pt-32 lg:px-36'> 
                 
             <h2 className='text-2xl font-semibold mb-10 tracking-wider  md:text-4xl'>New and old bits.. </h2>
 
-            <div className='w-full px-8'>
+            <div className='w-full px-8 items-center'>
                 
 
                 <div className='my-16 md:flex justify-center items-center w-full'>
