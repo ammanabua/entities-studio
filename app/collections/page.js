@@ -10,14 +10,14 @@ export default async function page () {
 
 
     return (
-        <section className='w-full flex-col justify-center text-center pt-32 lg:px-36'> 
+        <section className='w-full flex-col justify-center text-center mt-56 lg:px-36'> 
                 
             <h2 className='text-2xl font-semibold mb-10 tracking-wider  md:text-4xl'>New and old bits.. </h2>
 
             <div className='w-full px-8 items-center'>
                 
 
-                <div className='my-16 md:flex justify-center items-center w-full'>
+                <div className='mt-16 md:flex justify-center items-center w-full'>
                     <div className='md:w-1/2'>
                         <Image
                             src='/collection1.png'
@@ -31,13 +31,13 @@ export default async function page () {
                     <div className='md:w-1/2'>
                         <h2 className='overline text-2xl font-bold my-5 md:w-40 lg:w-80 m-auto leading-none'>Family Portrait</h2>
 
-                        <p className='font-rubik text-left text-lg bg-white w-64 md:w-52 lg:w-7/12 p-3 m-auto mb-8'>This collection is centered around my move to the UK with my family as a child, being close with my family and holding on to my memories of my time in Nigeria. This collection honors my lineage and family for being there along the way, guiding and strengthening me through each of my decisions.</p>
+                        <p className='font-rubik text-left text-lg bg-white w-64 md:w-52 lg:w-9/12 p-4 m-auto mb-8'>This collection is centered around my move to the UK with my family as a child, being close with my family and holding on to my memories of my time in Nigeria. <br /> This collection honors my lineage and family for being there along the way, guiding and strengthening me through each of my decisions.</p>
 
                         <Link href='/collections/family-portrait' className='bg-black text-white p-5'>🖼️ Explore Collection</Link>
                     </div>
                 </div>
 
-                <div className='my-16 md:flex justify-center items-center w-full'>
+                <div className='mb-16 md:flex justify-center items-center w-full'>
 
                     <div className='w-full md:w-1/2 mt-8 order-2'>
 
@@ -54,7 +54,7 @@ export default async function page () {
 
                         <h2 className='text-2xl my-5 font-bold'>Tamas Art</h2>
 
-                        <p className='font-rubik text-left text-lg bg-white w-64 md:w-52 lg:w-7/12 p-3 m-auto mb-8'>“The honest truth about having a creative process and discovering the ‘final final’ art piece is learning to channel maximum energy during a low period instead of just dwelling on the emotions coursing within…”</p>
+                        <p className='font-rubik text-left text-lg bg-white w-64 md:w-52 lg:w-9/12 p-4 m-auto mb-8'>“The honest truth about having a creative process and discovering the ‘final final’ art piece is learning to channel maximum energy during a low period instead of just dwelling on the emotions coursing within…”</p>
 
                         <Link href='/collections/tamas-art' className='bg-black text-white text-base p-5'>🖼️ Check me out</Link>
                     </div>

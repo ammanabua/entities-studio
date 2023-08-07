@@ -5,7 +5,7 @@ import React from 'react'
 const page = () => {
   return (
     <section className='mt-24'>
-      <div className='h-auto md:py-24 lg:py-16 lg:py-2 px-8 md:h-auto md:flex items-center justify-between bg-white border-gray-700 border-2 w-5/6 m-auto'>
+      <div className='h-auto py-12 md:py-24 lg:py-16 px-8 md:flex items-center justify-between bg-white border-gray-700 border-2 w-5/6 m-auto'>
           <div className='w-full md:w-1/2 justify-center m-auto md:mx-4 md:order-2'>
             <Image
               src='/event.png'

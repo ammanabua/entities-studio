@@ -86,8 +86,8 @@ const Cart = () => {
 
     const FilledCart = () => (
         <>
-            <div className='flex flex-2'>
-                <table className=''>
+            <div className='flex flex-2 justify-center w-full'>
+                <table className='table-auto w-[70%]'>
                     <tbody>
                         <tr className=''>
                             <th>Product</th>
@@ -99,42 +99,62 @@ const Cart = () => {
                         </tr>
                     </tbody>
                     <tbody>
-                        {cart.products.map((product) => (
-                            <tr className='' key={product._id}>
+                            <tr className='border border-black'>
                                 <td>
                                     <div className=''>
-                                        <Image className='' src={product.img} layout="fill" objectFit="cover" alt="" />
+                                        <Image className='' src='/collection1.png' width={80} height={60} alt="" />
                                     </div>
                                 </td>
                                 <td>
-                                    <span className=''>{product.title}</span>
+                                    <span className=''>Family Portrait</span>
                                 </td>
                                 <td>
                                     <span className=''>
-                                        {product.extras.map((extra) => (
-                                            <span key={extra._id}>{extra.text}</span>
-                                         ))}
+                                        
                                     </span>
                                 </td>
                                 <td>
-                                    <span className=''>{product.price}</span>
+                                    <span className=''>N40</span>
                                 </td>
                                 <td>
-                                    <span className=''>{product.quantity}</span>
+                                    <span className=''>2</span>
                                 </td>
                                 <td>
-                                    <span className=''>{product.price * product.quantity}</span>
+                                    <span className=''>N80</span>
                                 </td>
                             </tr>
-                        ))}
+                            <tr className='border border-black'>
+                                <td>
+                                    <div className=''>
+                                        <Image className='' src='/collection1.png' width={80} height={60} alt="" />
+                                    </div>
+                                </td>
+                                <td>
+                                    <span className=''>Family Portrait</span>
+                                </td>
+                                <td>
+                                    <span className=''>
+                                        
+                                    </span>
+                                </td>
+                                <td>
+                                    <span className=''>N40</span>
+                                </td>
+                                <td>
+                                    <span className=''>2</span>
+                                </td>
+                                <td>
+                                    <span className=''>N80</span>
+                                </td>
+                            </tr>
                     </tbody>
                 </table>
             </div>
-            <div className='flex flex-1'>
+            <div className='flex flex-1 justify-end w-[70%]'>
                 <div className=''>
                     <h2 className=''>Cart Total</h2>
                     <div className=''>
-                        <b className=''>Subtotal: </b> {cart.total}
+                        <b className=''>Subtotal: </b> 80
                     </div>
                     <div className=''>
                         <b className=''>Discount: </b> N0.00
@@ -143,7 +163,7 @@ const Cart = () => {
                         <b className=''>Delivery: </b> N0.00
                     </div>
                     <div className=''>
-                        <b className=''>Total: </b> {cart.total}
+                        <b className=''>Total: </b> 80
                     </div>
                     <div className=''>
                         
@@ -165,11 +185,11 @@ const Cart = () => {
 console.log(cart);
   return (
     <>
-        <div className='min-h-screen bg-white flex-col justify-centre items-center align-center'>
-            <h1 className=''>Shopping Cart</h1>
+        <div className='min-h-screen bg-white flex-col justify-centre items-center align-center pt-16'>
+            <h1 className='text-center'>Shopping Cart</h1>
 
-            <div className=''>
-                 <EmptyCart />
+            <div className='mt-20'>
+                 <FilledCart />
             </div>
         </div>
     </>

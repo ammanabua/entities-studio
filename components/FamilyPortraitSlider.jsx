@@ -3,6 +3,14 @@ import { useState } from "react"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import Image from "next/image"
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+import { EffectCards, Autoplay, Pagination, Navigation, EffectCreative } from "swiper";
 
 
 const FamilyPortraitSlider = ({ images }) => {
@@ -28,9 +36,9 @@ const FamilyPortraitSlider = ({ images }) => {
         
         <div className='sm:flex justify-center align-center h-full z-10 lg:absolute items-center'>
             
-            <div className='w-full md:w-1/2 px-8 lg:w-1/3 lg:order-2 ml-8'>
-                <h3 className='text-xl md:text-4xl md:font-bold text-left tracking-wide'>{images[currentIndex].name}</h3>
-                <p className='font-rubik text-left text-xl font-light tracking-wide mb-12 w-full tracking-wide'>{images[currentIndex].intro}</p>
+            <div className='w-full md:w-1/2 px-4 lg:w-1/3 lg:order-2'>
+                <h3 className='text-xl md:text-4xl md:font-bold text-left tracking-wide mb-8'>{images[currentIndex].name}</h3>
+                <p className='font-rubik text-left text-xl font-light tracking-wider mb-12 w-full tracking-wide'>{images[currentIndex].intro}</p>
             </div>
             
             <motion.div  
@@ -40,7 +48,7 @@ const FamilyPortraitSlider = ({ images }) => {
                         key={currentIndex}
                         src={images[currentIndex].url}
                         alt="Voids"
-                        width={490}
+                        width="490"
                         height="0"
                         sizes="100vw"
                         className="w-full lg:h-96" />
@@ -57,7 +65,7 @@ const FamilyPortraitSlider = ({ images }) => {
                     </div>
                 </div>
             </motion.div>
-            <div className='invisible lg:visible flex w-2/3 ml-32 items-center justify-between bottom-4 font-rubik z-40 text-[#777D96] absolute px-4'>
+            <div className='invisible lg:visible flex w-2/3 ml-32 items-center justify-between bottom-4 font-rubik z-40 text-[#777D96] absolute px-16'>
                 <div className="flex w-44 justify-between font-rubik text-xl font-medium">
                     <div className='w-24 h-24 bg-transparent items-center flex align-center justify-center cursor-pointer' onClick={handlePrevious}>
                         ‹ Prev
@@ -67,7 +75,7 @@ const FamilyPortraitSlider = ({ images }) => {
                     </div>
                 </div>
                 <div className="font-rubik">
-                    <span className="text-4xl   text-[#32374B]">{currentIndex + 1}</span><span className="text-xl"> / {images.length}</span>
+                    <span className="text-4xl text-[#32374B]">{currentIndex + 1}</span><span className="text-xl absolute w-8"> / {images.length}</span>
                 </div>
             </div>
         </div>

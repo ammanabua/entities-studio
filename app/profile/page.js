@@ -12,7 +12,7 @@ const page = () => {
             <h1 className="mb-4">Welcome, User</h1>
 
             <Image 
-                src="/user1.png"
+                src="/user.png"
                 width="0"
                 height="0"
                 sizes="100vw"
