@@ -3,13 +3,15 @@ import Image from 'next/image'
 
 const page = () => {
   return (
-    <main className='bg-white min-h-content flex justify-center align-center'>
-        <section className='my-12'>
-            <div className='w-full border border-red-700 my-8'>
-                Collections & Events
+    <main className='bg-white min-h-content flex justify-center align-center w-full'>
+        <section className='my-12 w-full'>
+            <div className='flex justify-between border border-red-700 my-8 w-4/5 m-auto min-h-screen'>
+                <div>Available Pieces</div>
+                <div>Collections</div>
+                <div>Completed Orders</div>
             </div>
-            <div className='flex lg:space-x-12'>
-                <div className='border border-black rounded-xl p-8 cursor-pointer'>
+            <div className='flex lg:space-x-12 justify-center'>
+                <div className='border border-black rounded-xl p-4 cursor-pointer'>
                     <Image 
                         src='/paint.png'
                         height={90}
@@ -21,24 +23,25 @@ const page = () => {
                         New Art
                     </p>
                 </div>
-                <div className='border border-black rounded-xl p-8 cursor-pointer'>
+                <div className='border border-black rounded-xl p-4 cursor-pointer'>
                     <Image 
                         src='/collection.png'
                         height={90}
                         width={90}
-                        alt="Add New Artwork"
+                        alt="Add New Collection"
                         className="m-auto"
                     />
                     <p>
                         New Collection
                     </p>
                 </div>
-                <div className='border border-black rounded-xl p-8 cursor-pointer'>
+                <div className='border border-black rounded-xl p-4 cursor-pointer'>
                     <Image 
                         src='/newevent.png'
                         height={90}
                         width={90}
-                        alt="Add New Artwork"
+                        alt="Add New 
+                        Event"
                         className="m-auto"
                     />
                     <p>

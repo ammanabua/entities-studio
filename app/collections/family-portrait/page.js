@@ -79,7 +79,7 @@ const page = () => {
         </div>
 
         <div className='h-screen border-dashed border-black border-4 mb-16 flex justify-center align-center'>
-            <Flipbook />
+            <Flipbook images={images} />
         </div>
 
         <div className='flex justify-center w-full'>

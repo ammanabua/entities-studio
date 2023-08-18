@@ -85,21 +85,20 @@ const Cart = () => {
     );
 
     const FilledCart = () => (
-        <>
-            <div className='flex flex-2 justify-center w-full'>
-                <table className='table-auto w-[70%]'>
+        <main className="md:flex justify-center w-full md:w-4/5 space-x-12 px-16 m-auto">
+            <div className='w-full md:w-[70%]'>
+                <table className='table-auto text-left w-full'>
                     <tbody>
                         <tr className=''>
-                            <th>Product</th>
+                            <th>Piece</th>
                             <th>Name</th>
-                            <th>Extras</th>
+                            <th>Size</th>
                             <th>Price</th>
-                            <th>Quantity</th>
                             <th>Total</th>
                         </tr>
                     </tbody>
-                    <tbody>
-                            <tr className='border border-black'>
+                    <tbody className="font-rubik">
+                            <tr className=''>
                                 <td>
                                     <div className=''>
                                         <Image className='' src='/collection1.png' width={80} height={60} alt="" />
@@ -110,20 +109,17 @@ const Cart = () => {
                                 </td>
                                 <td>
                                     <span className=''>
-                                        
+                                        4 x 5
                                     </span>
                                 </td>
                                 <td>
                                     <span className=''>N40</span>
-                                </td>
-                                <td>
-                                    <span className=''>2</span>
                                 </td>
                                 <td>
                                     <span className=''>N80</span>
                                 </td>
                             </tr>
-                            <tr className='border border-black'>
+                            <tr className=''>
                                 <td>
                                     <div className=''>
                                         <Image className='' src='/collection1.png' width={80} height={60} alt="" />
@@ -134,14 +130,11 @@ const Cart = () => {
                                 </td>
                                 <td>
                                     <span className=''>
-                                        
+                                        4 x 5
                                     </span>
                                 </td>
                                 <td>
                                     <span className=''>N40</span>
-                                </td>
-                                <td>
-                                    <span className=''>2</span>
                                 </td>
                                 <td>
                                     <span className=''>N80</span>
@@ -150,20 +143,11 @@ const Cart = () => {
                     </tbody>
                 </table>
             </div>
-            <div className='flex flex-1 justify-end w-[70%]'>
-                <div className=''>
-                    <h2 className=''>Cart Total</h2>
+            <div className='flex justify-start p-8 w-60 bg-gray-800 rounded-xl'>
+                <div className='text-white'>
+                    <h2 className='font-rubik mb-4'>Cart Summary</h2>
                     <div className=''>
-                        <b className=''>Subtotal: </b> 80
-                    </div>
-                    <div className=''>
-                        <b className=''>Discount: </b> N0.00
-                    </div>
-                    <div className=''>
-                        <b className=''>Delivery: </b> N0.00
-                    </div>
-                    <div className=''>
-                        <b className=''>Total: </b> 80
+                        <b className=''>Subtotal: </b> £ 160
                     </div>
                     <div className=''>
                         
@@ -174,19 +158,19 @@ const Cart = () => {
                                 <button className='' onClick={() => setCash(true)}>Cash on Delivery</button>
                             </div>
                         ) : (
-                            <button onClick={() => setOpen(true)} className=''>CHECKOUT</button>
+                            <button onClick={() => setOpen(true)} className='bg-green-500 p-4 mt-8 rounded-md'>CHECKOUT</button>
                         )}
                     </div>
                 </div>
             </div>        
-        </>
+        </main>
     )
 
-console.log(cart);
+    console.log(cart);
   return (
     <>
         <div className='min-h-screen bg-white flex-col justify-centre items-center align-center pt-16'>
-            <h1 className='text-center'>Shopping Cart</h1>
+            <h1 className='text-center'>Entities Basket</h1>
 
             <div className='mt-20'>
                  <FilledCart />
