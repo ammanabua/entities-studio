@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import dbConnect from "../../../util/mongo";
-import Art from "../../models/Art";
+import Image from "../../models/Image";
 
 
 export async function GET () {
@@ -9,9 +9,9 @@ export async function GET () {
 
     try{
 
-        const art = await Art.find();
+        const images = await Image.find();
         console.log('Images Found!')
-        return NextResponse.json({ art })
+        return NextResponse.json({ images })
 
     } catch(err){
         console.log("Error")
@@ -29,9 +29,9 @@ export async function POST(request) {
     
 
     try{
-        const art = await Art.create(res);
-        console.log('Image Created!', art)
-        return NextResponse.json({ art })
+        const image = await Image.create(res);
+        console.log('Image Created!', image)
+        return NextResponse.json({ image })
     } catch(err){
         console.log('Error', err)
         return NextResponse.json(err.message);

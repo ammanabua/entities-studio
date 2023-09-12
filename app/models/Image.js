@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 
-const ArtSchema = new mongoose.Schema({
+const ImageSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true
@@ -17,7 +17,7 @@ const ArtSchema = new mongoose.Schema({
         required: true
     },
 
-    image: {
+    url: {
         type: String,
         required: true,
     },
@@ -37,4 +37,4 @@ const ArtSchema = new mongoose.Schema({
     }
 })
 
-export default mongoose.models.Image || mongoose.model('Art', ArtSchema);
+export default mongoose.models.Image || mongoose.model('Image', ImageSchema);

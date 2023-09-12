@@ -43,7 +43,7 @@ const FamilyPortraitSlider = ({ images }) => {
             
             <motion.div  
                 className='w-full md:w-1/2 lg:w-1/3 mr-8'>
-                <Link href="/collections/family-portrait/details">
+                <Link href="/images/slug">
                     <Image
                         key={currentIndex}
                         src={images[currentIndex].url}

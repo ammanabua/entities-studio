@@ -9,9 +9,9 @@ export async function GET () {
 
     try{
 
-        const order = await Order.find();
+        const orders = await Order.find();
         console.log('Orders Found!')
-        return NextResponse.json({ order })
+        return NextResponse.json({ orders })
 
     } catch(err){
         console.log("Error")

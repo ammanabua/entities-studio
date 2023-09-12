@@ -4,6 +4,11 @@ import Footer from '../components/Footer'
 import Featured from "@/components/Featured"
 import Link from 'next/link'
 
+export const metadata = {
+  title: 'Welcome to Entities Studio',
+  description: '',
+}
+
 export default function Home() {
 
   return (

@@ -7,10 +7,7 @@ import store from '../redux/store'
 import { Provider } from 'react-redux'
 
 
-export const metadata = {
-  title: 'Welcome to Entities Studio',
-  description: '',
-}
+
 
 export default function RootLayout({ children }) {
   return (

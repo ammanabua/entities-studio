@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import dbConnect from "../../../../util/mongo";
-import Art from "../../../models/Art";
+import Image from "../../../models/Image";
 
 
 export async function GET(req, { params }){
@@ -9,8 +9,8 @@ export async function GET(req, { params }){
 
     try{
 
-        const art = await Art.findById(params.id)
-        return NextResponse.json(art)
+        const image = await Image.findById(params.id)
+        return NextResponse.json({ image })
     } catch (err) {
         console.log("Error: ")
         return NextResponse.json(err.message)
@@ -26,9 +26,9 @@ export async function PUT(req, { params }){
     const res = await req.json();
 
     try{
-        const art = await Art.findByIdAndUpdate(id, res, { new: true,});
+        const image = await Image.findByIdAndUpdate(id, res, { new: true,});
         console.log('Collection Updated!')
-        NextResponse.json({ art })
+        NextResponse.json({ image })
     } catch(err) {
         console.log("Error: ")
         return NextResponse.json(err.message)

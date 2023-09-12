@@ -5,6 +5,11 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import FamilyPortraitSlider from '@/components/FamilyPortraitSlider'
 
+export const metadata = {
+  title: 'Family Portrait - Entities Studio',
+  description: '',
+}
+
 
 const images = [
     {

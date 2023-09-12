@@ -1,6 +1,11 @@
 import Image from "next/image"
 import Link from 'next/link'
 
+export const metadata = {
+  title: 'About - Entities Studio',
+  description: '',
+}
+
 export default function About() {
   return (
     <section className="flex min-h-screen text-center justify-center p-2 w-5/6 m-auto mt-24">

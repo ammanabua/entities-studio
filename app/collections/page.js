@@ -3,7 +3,10 @@ import Image from "next/image"
 import Link from 'next/link'
 
 
-
+export const metadata = {
+    title: 'Collections - Entities Studio',
+    description: '',
+  }
 
 
 export default async function page () {

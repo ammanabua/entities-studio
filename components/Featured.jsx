@@ -11,7 +11,7 @@ const Featured = () => {
                 width={1440}
                 height={900}
                 alt="Family Portrait"
-                style={{
+                style={{ 
                 maxWidth: "100%",
                 height: "auto"
                 }} 

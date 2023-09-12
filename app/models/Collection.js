@@ -14,8 +14,10 @@ const CollectionSchema = new mongoose.Schema({
 
     items: {
         type: [{
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Art"
+            id: {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: "Art"
+            },
         }],
     },
 

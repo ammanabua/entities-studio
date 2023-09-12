@@ -8,7 +8,7 @@ import { Box, Grid, Typography } from "@mui/material"
 const page = () => {
   return (
     <section className="h-auto w-full bg-white px-12">
-        <div className="w-full py-12">
+        <div className="w-3/5 py-12 m-auto">
             <h1 className="mb-4">Welcome, User</h1>
 
             <Image 
