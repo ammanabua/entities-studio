@@ -22,8 +22,8 @@ const Carousel = ({ collection }) => {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setSeconds((seconds) => seconds + 1);
-        }, 5000);
+            setCurrentIndex((index) => index + 1);
+        }, 7000);
 
         return () => clearInterval(interval);
     }, []);
@@ -57,45 +57,47 @@ const Carousel = ({ collection }) => {
     <>
 
         {show ? 
-        <div key={collection[currentIndex]} className="flex w-full justify-center items-start">
+        <div key={collection[currentIndex]} className="flex w-full justify-center items-center lg:items-start">
             <AnimatePresence mode="wait">
+                <motion.div
+                    initial={{ y:200, opacity:0, }}
+                    animate = {{opacity: 1, y: 0, transition:{duration: 0.8}}}
+                    exit={{opacity: 0, y: -50, transition:{duration: 0.4} }}
+                    key={currentIndex}
+                    className='w-full md:w-1/2 px-4 lg:w-1/3 lg:order-2'>
+                    <h3 className='text-xl md:text-4xl md:font-bold text-left tracking-wide mb-8'>{collection[currentIndex].title}</h3>
+                    <p className='font-rubik text-left text-xl font-light tracking-wider mb-12 w-full tracking-wide'>{collection[currentIndex].desc}</p>
+                </motion.div>
+            </AnimatePresence>
 
-            <motion.div
-                initial={{ y:200, opacity:0, }}
-                animate = {{opacity: 1, y: 0, transition:{duration: 0.8}}}
-                exit={{opacity: 0, y: -200 }}
-                key={currentIndex}
-                className='w-full md:w-1/2 px-4 lg:w-1/3 lg:order-2'>
-                <h3 className='text-xl md:text-4xl md:font-bold text-left tracking-wide mb-8'>{collection[currentIndex].title}</h3>
-                <p className='font-rubik text-left text-xl font-light tracking-wider mb-12 w-full tracking-wide'>{collection[currentIndex].desc}</p>
-            </motion.div>
-            <motion.div
-                initial={{ x:-200, opacity:0, }}
-                animate = {{opacity: 1, y: 0, x:0, transition:{duration: 0.8}}}
-                exit={{opacity: 0}}
-                key={currentIndex}
-                className='w-full md:w-1/2 lg:w-1/3 mr-8'>
-                <Link href="/images/slug">
-                    <Image
-                        src={collection[currentIndex].url}
-                        alt="Voids"
-                        width="490"
-                        height="0"
-                        sizes="100vw"
-                        className="w-full lg:h-96" />
-                </Link>
+            <AnimatePresence mode="wait">
+                <motion.div
+                    initial={{ x:-200, opacity:0, }}
+                    animate = {{opacity: 1, y: 0, x:0, transition:{duration: 0.8}}}
+                    exit={{opacity: 0}}
+                    key={currentIndex}
+                    className='w-full md:w-1/2 lg:w-1/3 mr-8'>
+                    <Link href="/images/slug">
+                        <Image
+                            src={collection[currentIndex].url}
+                            alt="Voids"
+                            width="490"
+                            height="0"
+                            sizes="100vw"
+                            className="w-full lg:h-96" />
+                    </Link>
 
-                {/* Navigation Links for LAPTOPS & SMALLER */}
+                    {/* Navigation Links for LAPTOPS & SMALLER */}
 
-                <div className='lg:hidden flex w-28 align-center justify-between mt-12 font-rubik'>
-                    <div className='w-12 h-12 bg-white items-center flex align-center justify-center font-light hover:bg-[#EB6F07] hover:text-white' onClick={handlePrevious}>
-                        ‹
+                    <div className='lg:hidden flex w-28 align-center justify-between mt-12 font-rubik'>
+                        <div className='w-12 h-12 bg-white items-center flex align-center justify-center font-light hover:bg-[#EB6F07] hover:text-white' onClick={handlePrevious}>
+                            ‹
+                        </div>
+                        <div className='w-12 h-12 bg-white items-center flex align-center justify-center font-light hover:bg-[#EB6F07] hover:text-white' onClick={handleNext}>
+                            ›
+                        </div>
                     </div>
-                    <div className='w-12 h-12 bg-white items-center flex align-center justify-center font-light hover:bg-[#EB6F07] hover:text-white' onClick={handleNext}>
-                        ›
-                    </div>
-                </div>
-            </motion.div>
+                </motion.div>
             </AnimatePresence>
         </div> : <div className="text-2xl font-bold">Loading</div>}
 
