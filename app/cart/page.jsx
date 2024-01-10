@@ -158,7 +158,7 @@ const Cart = () => {
                                 <button className='' onClick={() => setCash(true)}>Cash on Delivery</button>
                             </div>
                         ) : (
-                            <button onClick={() => setOpen(true)} className='bg-green-500 p-4 mt-8 rounded-md'>CHECKOUT</button>
+                            <button onClick={() => setOpen(true)} className='bg-green-500 p-4 mt-8 rounded-md'>Checkout</button>
                         )}
                     </div>
                 </div>

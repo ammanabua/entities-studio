@@ -12,28 +12,7 @@ import { EffectCards, Autoplay, Pagination, Navigation, EffectCreative } from "s
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Flipbook() {
-    
-  const [images, setImages] = useState([])
-
-
-  const collection = images.filter((item) => {
-    return item.tag == "family-portrait"
-  })
-
-  console.log(collection)
-  
-    const getImages = async () => {
-      const res = await fetch('/api/images');
-      const body = await res.json()
-      console.log(body.images)
-      
-      setImages(body.images)
-    } 
-    
-    useEffect(() => {
-      getImages();
-    },[])
+export default function Flipbook({ collection }) {  
 
   return (
     <>      

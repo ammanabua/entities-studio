@@ -20,6 +20,8 @@ const Page = () => {
     setCurrentIndex(index);
      }
 
+     
+
   return (
     <section className='bg-[#FF6868] w-full flex justify-center'>
       <div className='align-center justify-between mt-32 mb-4 px-8'>
@@ -77,3 +79,6 @@ const Page = () => {
 }
 
 export default Page
+
+
+

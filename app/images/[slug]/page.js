@@ -1,21 +1,25 @@
 'use client'
+import { useEffect, useState } from 'react'
 import Image from "next/image"
 import Link from "next/link"
-import { useRouter } from "next/navigation"
+import { useRouter, usePathname, useSearchParams } from "next/navigation"
 import { NextResponse } from "next/server"
-import { useEffect, useState } from 'react'
-
+import { addArt } from "../../../redux/cartSlice"
+import { useDispatch } from 'react-redux'
   
 
-const Page = () => {
-
-    const router = useRouter()
-    const {slug} = router.query //this is [lang], [category] and [sub]
+export default async function Page ({ art }) {
+    
     const [product, setProduct] = useState(null)
+    const [price, setPrice] = useState("");
+    const [quantity, setQuantity] = ("");
+
+    const router = useRouter();
+    const dispatch = useDispatch();
 
     const loadProduct = async function (slug) {
         // for exemple...
-        const res = await fetch(`/api/images/${slug}`, {
+        const res = await fetch(`http://localhost:3000/api/images/${slug}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -30,12 +34,23 @@ const Page = () => {
     
     useEffect(() => {
         loadProduct(slug)
-    }, [slug])
+    }, [])
+
+
+    const handleClick = () => {
+        dispatch(addArt({ ...art, price, quantity}));
+    }
+
 
 
   return (
       <section className="w-full bg-white flex justify-center py-24">
           <div className="text-center">
+            <div onClick={() => router.back({ scroll: false})}>
+                <p className='w-full flex justify-start font-krona text-xs font-light'>
+                    Back
+                </p>
+            </div>
               <h1 className="uppercase text-center text-2xl mb-8">
                   Family Portrait
               </h1>
@@ -65,12 +80,12 @@ const Page = () => {
                   £2,000
               </p>
 
-              <Link href="/checkout" className="font-rubik font-light border border-black p-4 rounded-3xl text-sm">
+              <button href="/checkout" className="font-rubik font-light border border-black p-4 rounded-3xl text-sm" onClick={handleClick}>
                   Collect
-              </Link>
+              </button>
           </div>
       </section>
   );
 }
 
-export default Page
+
