@@ -1,8 +1,11 @@
+'use client'
 import React from 'react'
 import Image from 'next/image'
+import AddNewArt from '@/components/AddNewArt'
 
 const page = () => {
   return (
+
     <main className='bg-white flex justify-center align-center w-full pb-24'>
         <section className='my-12 w-full min-h-screen'>
             <div className='grid grid-cols-2 border border-red-700 my-8 w-4/5 m-auto h-4/5'>
@@ -13,16 +16,9 @@ const page = () => {
             </div>
             <div className='flex lg:space-x-12 justify-center'>
                 <div className='border border-black rounded-xl p-4 cursor-pointer'>
-                    <Image 
-                        src='/paint.png'
-                        height={60}
-                        width={60}
-                        alt="Add New Artwork"
-                        className="m-auto"
-                    />
-                    <p>
-                        New Art
-                    </p>
+                    <div>
+                        <AddNewArt />
+                    </div>
                 </div>
                 <div className='border border-black rounded-xl p-4 cursor-pointer'>
                     <Image 

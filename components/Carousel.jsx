@@ -22,11 +22,11 @@ const Carousel = ({ collection }) => {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentIndex((index) => index + 1);
+            handleNext();
         }, 7000);
 
         return () => clearInterval(interval);
-    }, []);
+    });
 
     useEffect(() => {
         const timeout = setTimeout(() => {
@@ -77,7 +77,7 @@ const Carousel = ({ collection }) => {
                     exit={{opacity: 0}}
                     key={currentIndex}
                     className='w-full md:w-1/2 lg:w-1/3 mr-8'>
-                    <Link href="/images/slug">
+                    <Link href={`/images/${collection[currentIndex].slug}`}>
                         <Image
                             src={collection[currentIndex].url}
                             alt="Voids"

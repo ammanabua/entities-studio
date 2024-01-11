@@ -28,12 +28,12 @@ export default async function Page ({ art }) {
         })
         const response = await res.json()
         setProduct(response)
-        console.log(product)
+        console.log(response)
         return response
     }
     
     useEffect(() => {
-        loadProduct(slug)
+        loadProduct()
     }, [])
 
 

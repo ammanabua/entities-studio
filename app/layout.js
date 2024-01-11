@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import store from '../redux/store'
 import { Provider } from 'react-redux'
+import ScrollButton from '@/components/ScrollButton'
 
 
 
@@ -17,7 +18,7 @@ export default function RootLayout({ children }) {
           <Navbar />
           
             {children}
-          
+            <ScrollButton />
           <Footer />
         </Provider>
       </body>

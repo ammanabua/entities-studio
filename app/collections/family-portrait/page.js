@@ -5,11 +5,9 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import FamilyPortraitSlider from '@/components/FamilyPortraitSlider'
 import { useEffect, useState } from 'react'
+import { json } from 'micro'
 
-export const metadata = {
-  title: 'Family Portrait - Entities Studio',
-  description: '',
-}
+
 
 
 
@@ -17,9 +15,11 @@ export default function Page () {
 
   const [images, setImages] = useState([])
 
+  // RUN FUNCTION ON PAGE LOAD TO GET IMAGES FROM DB
   useEffect(() => {
     getImages();
-  },[])
+  },[]);
+
 
 
   // GET ALL IMAGES FROM DB
@@ -28,12 +28,11 @@ export default function Page () {
     const body = await res.json()
     console.log(body.images)
     setImages(body.images)
-    
   } 
 
   
 
-
+  //FILTER IMAGES FOR THE FAMILY-PORTRAIT COLLECTION
   const collection = images.filter((item) => {
     return item.tag == "family-portrait"
   })
@@ -75,8 +74,8 @@ export default function Page () {
                       height: "auto"
                   }} />
           </div>
-          <div className='flex - justify-center w-full'>
-              <Link href="/collections" className='font-rubik bg-gray-300 uppercase font-bold p-3 w-80 border-none text-center text-sm mt-20'>
+          <div className='flex justify-center items-center w-full'>
+              <Link href="/collections" className='flex font-rubik bg-gray-300 uppercase font-bold p-3 h-14 w-[480px] border-none items-center justify-center text-sm mt-20'>
                   Back to Collections
               </Link>
           </div>
