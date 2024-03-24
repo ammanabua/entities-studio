@@ -4,6 +4,7 @@ import Link from "next/link"
 import { AnimatePresence, motion } from "framer-motion"
 import Image from "next/image"
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { TfiAngleLeft, TfiAngleRight } from "react-icons/tfi"
 
 
 import 'swiper/css';
@@ -17,8 +18,6 @@ const Carousel = ({ collection }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const [show, setShow] = useState(false);
-
-    const [seconds, setSeconds] = useState(0);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -101,17 +100,18 @@ const Carousel = ({ collection }) => {
             </AnimatePresence>
         </div> : <div className="text-2xl font-bold">Loading</div>}
 
+            {/* NAV LINKS FOR LARGE SCREENS */}
         <div className='hidden lg:flex w-2/3 lg:ml-60 items-center justify-between bottom-4 font-rubik z-40 text-[#777D96] absolute px-16'>
             <div className="flex w-44 justify-between font-rubik text-xl font-medium">
-                <div className='w-24 h-24 bg-transparent items-center flex align-center justify-center cursor-pointer' onClick={handlePrevious}>
-                    ‹ Prev
-                </div>
-                <div className='w-24 h-24 bg-transparent items-center flex align-center justify-center cursor-pointer' onClick={handleNext}>
-                    Next ›
-                </div>
+                <button className='w-24 h-24 bg-transparent items-center flex align-center justify-center cursor-pointer' onClick={handlePrevious}>
+                    <TfiAngleLeft className="mr-2" /> Prev
+                </button>
+                <button className='w-24 h-24 bg-transparent items-center flex align-center justify-center cursor-pointer' onClick={handleNext}>
+                    Next <TfiAngleRight className="ml-2" />
+                </button>
             </div>
-            <div className="font-rubik">
-                <span className="text-4xl text-[#32374B]">{currentIndex + 1}</span><span className="text-xl absolute w-8"> / {collection.length}</span>
+            <div className="font-rubik flex items-center">
+                <span className="text-[40px] text-[#32374B]">{currentIndex <= 8 ? '0' : ''}{currentIndex + 1}</span><span className="text-xl w-8"><span>/</span>{collection.length}</span>
             </div>
         </div>
     </>

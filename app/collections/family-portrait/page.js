@@ -75,8 +75,8 @@ export default function Page () {
                   }} />
           </div>
           <div className='flex justify-center items-center w-full'>
-              <Link href="/collections" className='flex font-rubik bg-gray-300 uppercase font-bold p-3 h-14 w-[480px] border-none items-center justify-center text-sm mt-20'>
-                  Back to Collections
+              <Link href="/collections" className='flex font-rubik bg-gray-300 uppercase font-bold p-3 h-14 w-[480px] border-none items-center justify-center text-sm mt-20 hover:text-white hover:underline transition duration-500'>
+                  ‹ Back to Collections ›
               </Link>
           </div>
       </section>

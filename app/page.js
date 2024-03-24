@@ -27,8 +27,8 @@ export default function Home() {
       
       <Featured />
 
-      <Link href="/events" className='font-rubik font-bold uppercase bg-gray-300 p-4 w-80 md:w-96 border-none text-center text-sm my-5'>
-       Explore Events 
+      <Link href="/events" className='font-rubik font-bold uppercase bg-gray-300 p-4 w-80 h-14 md:w-[480px] text-center text-sm my-5 hover:border hover:border-black hover:bg-transparent transition duration-500'>
+       ‹ Explore Events ›
       </Link>
     </main>
   );

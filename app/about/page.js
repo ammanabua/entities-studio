@@ -33,11 +33,30 @@ export default function About() {
             }} />
 
         </div>
-        <ul className="w-40 justify-between flex justify-center text-black my-4 m-auto">
-          <li>Ttr.</li>
-          <li>Ig.</li>
-          <li>Yt.</li>
-          <li>Tik.</li>
+        <ul className="w-40 justify-between flex justify-center text-black my-4 m-auto child-hover:text-white child-hover:transition child-hover:duration-400 child:cursor-pointer">
+          <li>
+            <a href='https://twitter.com/tiff2chimdi' target="_blank" rel="noopener noreferrer" className="">
+            Ttr.
+            </a>
+          </li>
+
+          <li>
+            <a href='https://www.instagram.com/entities.studio/' target="_blank" rel="noopener noreferrer" className="">
+              Ig.
+            </a>
+          </li>
+
+          <li>
+            <a href='https://www.youtube.com/channel/UC1EMt330GR8Xlyw8VQxtpYA/' target="_blank" rel="noopener noreferrer" className="">
+              Yt.
+            </a>
+          </li>
+
+          <li>
+            <a href='https://www.tiktok.com/@chimdi_talks' target="_blank" rel="noopener noreferrer" className="">
+              Tik.
+            </a>
+          </li>
         </ul>
       </div>
     </section>

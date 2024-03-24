@@ -1,20 +1,24 @@
 'use client'
 import Image from "next/image"
 import Link from "next/link"
-import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { Button, Modal, Box, Typography } from "@mui/material";
 
 export default function Navbar () {
 
-    const { events } = useRouter()
+    const pathname = usePathname();
     const [open, setOpen] = useState(false)
 
     const handleOpen = () => setOpen(true)
     const handleClose = () => setOpen(false)
 
+    const isActive = (href) => pathname === href;
+
+    
+    
     return (
-        <nav className="font-krona flex w-full align-center items-center justify-between box-border top-0 left-0 right-0 px-12">
+        <nav className={`font-krona flex w-full align-center items-center justify-between box-border top-0 left-0 right-0 px-12 ${isActive('/collections/tamas-art') ? 'bg-[#FF6868]' : ''} ${isActive('/cart') ? 'bg-white' : ''}`}>
             <Link href="/">
                 <Image
                     src="/head.png"
@@ -28,9 +32,9 @@ export default function Navbar () {
             </Link>
 
             <ul className="justify-between items-center w-1/4 list-none bg-none font-krona text-lg hidden lg:flex space-x-8">
-                <Link className="hover:underline" href='/collections'>Collections</Link>
-                <Link className="hover:underline" href='/events'>Events</Link>
-                <Link className="hover:underline" href='/about'>Bio</Link>
+                <Link className={`hover:border-b-[.5px] border-black ${isActive('/collections') ? "active" : ''}`} href='/collections'>Collections</Link>
+                <Link className={`hover:border-b-[.5px] border-black ${isActive('/events') ? "active" : ''}`} href='/events'>Events</Link>
+                <Link className={`hover:border-b-[.5px] border-black ${isActive('/about') ? "active" : ''}`} href='/about'>Bio</Link>
             </ul>
 
             <div className='invisible lg:visible'>
@@ -49,6 +53,7 @@ export default function Navbar () {
                 </div>
             </div>
 
+            {/* HAMBURGER MENU FOR MOBILE SCREENS */}
             <div className="lg:hidden flex items-center">
                 <button onClick={handleOpen} className="outline-none mobile-menu-button p-4">
                 <svg

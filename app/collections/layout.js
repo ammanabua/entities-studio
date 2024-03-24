@@ -6,7 +6,7 @@ import Footer from '../../components/Footer'
 
 export default function CollectionsLayout({ children }) {
   return (
-      <div className="font-krona ">        
+      <div className="font-krona">        
           {children}
       </div>
   )

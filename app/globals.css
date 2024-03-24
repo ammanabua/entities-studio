@@ -20,3 +20,7 @@
 body {
   background-color: #EB6F07;
 }
+
+.active{
+  border-bottom: .5px solid black;
+}

@@ -40,8 +40,8 @@ const page = () => {
       <p className='my-20 w-4/6 font-bold text-black opacity-70 ml-12 md:ml-20 text-xl'>good things come to those who wait..</p>
 
       <div className='flex w-full mt-24 mb-4 justify-center'>
-        <Link href="/collections" className='font-rubik bg-gray-300 text-center uppercase font-bold p-3 w-96 h-12 border-none text-sm'>
-            Explore Collections
+        <Link href="/collections" className='flex items-center justify-center font-rubik bg-gray-300 text-center uppercase font-bold p-3 w-[480px] h-14 border-none text-sm hover:underline hover:text-white transition duration-500'>
+            ‹ Explore Collections ›
         </Link>
       </div>
 
