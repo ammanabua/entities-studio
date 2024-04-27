@@ -12,8 +12,8 @@ export async function GET(req, { params }){
         const collection = await Collection.findById(params.id)
         return NextResponse.json(collection)
     } catch (err) {
-        console.log("Error: ")
-        return NextResponse.json({ collection })
+        console.log("Error: " + err)
+        return NextResponse.json(err)
     }    
     
 }

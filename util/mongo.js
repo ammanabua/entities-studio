@@ -1,8 +1,8 @@
 import mongoose from 'mongoose'
 
-const MONGO_URL = process.env.MONGO_URL
+const MONGO_URL_LOCAL = process.env.MONGO_URL_LOCAL
 
-if (!MONGO_URL) {
+if (!MONGO_URL_LOCAL) {
   throw new Error(
     'Please define the MONGO_URL environment variable inside .env.local'
   )
@@ -29,7 +29,7 @@ async function dbConnect() {
       bufferCommands: false,
     }
 
-    cached.promise = mongoose.connect(MONGO_URL, opts, { useUnifiedTopology:true, useIndexes:true }, ).then((mongoose) => {
+    cached.promise = mongoose.connect(MONGO_URL_LOCAL, opts, { useUnifiedTopology:true, useIndexes:true }, ).then((mongoose) => {
       return mongoose
     })
   }
