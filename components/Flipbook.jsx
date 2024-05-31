@@ -50,7 +50,7 @@ export default function Flipbook({ collection }) {
               />
 
               <h2 className="border-2 border-black bg-[#E7E7D0] h-16 items-center flex justify-center font-bold tracking-widest text-3xl uppercase">Family Portrait</h2>
-              <p>by <br /> Chim'Di </p>
+              <p>by <br /> Chim&apos;Di </p>
 
               <Image
                 src='/head.png'
@@ -123,7 +123,7 @@ export default function Flipbook({ collection }) {
               <div className="space-y-8 text-sm tracking-wide leading-6">
                 <p>FAMILY PORTRAIT is a representation of my childhood memories, emotions and concepts of my family unit through my adult mind. </p>
                 
-                <p>Each artwork gradually unfold and shines a light on specific periods of my life growing up within my family. Going through emotions that weren't explored as a child or overlooked due to future aspirations and understanding to compromise. </p>
+                <p>Each artwork gradually unfold and shines a light on specific periods of my life growing up within my family. Going through emotions that weren&apos;t explored as a child or overlooked due to future aspirations and understanding to compromise. </p>
                 
                 <p>Acknowledging these memories allows me as a being, a person, a daughter, a woman to accept my past and venture fearlessly through the world around me.</p>
 
@@ -243,7 +243,7 @@ export default function Flipbook({ collection }) {
                         className="m-auto"
                       />
 
-                      <p className="">Chim'Di Da Entity</p>
+                      <p className="">Chim&apos;Di Da Entity</p>
 
                     </Link>
                     

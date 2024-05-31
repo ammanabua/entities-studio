@@ -23,7 +23,7 @@ const TamasGrid = () => {
     } 
     
     useEffect(() => {
-    getImages();
+        getImages();
     },[])
 
 

@@ -5,7 +5,7 @@ import { useState } from "react";
 import axios from "axios";
 
 import { useRouter } from "next/navigation";
-import { reset } from "../../redux/cartSlice"
+import { reset } from "@/redux/cartSlice"
 import Link from "next/link";
 
 

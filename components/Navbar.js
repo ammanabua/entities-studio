@@ -32,9 +32,9 @@ export default function Navbar () {
             </Link>
 
             <ul className="justify-between items-center w-1/4 list-none bg-none font-krona text-lg hidden lg:flex space-x-8">
-                <Link className={`hover:border-b-[.5px] border-black ${isActive('/collections') ? "active" : ''}`} href='/collections'>Collections</Link>
-                <Link className={`hover:border-b-[.5px] border-black ${isActive('/events') ? "active" : ''}`} href='/events'>Events</Link>
-                <Link className={`hover:border-b-[.5px] border-black ${isActive('/about') ? "active" : ''}`} href='/about'>Bio</Link>
+                <Link className={`un ${isActive('/collections') ? "active" : ''}`} href='/collections'>Collections</Link>
+                <Link className={`un ${isActive('/events') ? "active" : ''}`} href='/events'>Events</Link>
+                <Link className={`un ${isActive('/about') ? "active" : ''}`} href='/about'>Bio</Link>
             </ul>
 
             <div className='invisible lg:visible'>

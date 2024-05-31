@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {TfiAngleUp} from 'react-icons/tfi'; 
   
 const ScrollButton = () =>{ 
@@ -24,14 +24,18 @@ const ScrollButton = () =>{
          in place of 'smooth' */
     }); 
   }; 
+
+  useEffect(() => {
+    window.addEventListener('scroll', toggleVisible); 
+
+  }, [])
   
-  window.addEventListener('scroll', toggleVisible); 
   
   return ( 
     <button style={{display: visible ? 'inline' : 'none', transitionDelay: 0.5}} onClick={scrollToTop} className='fixed w-[50px] bottom-6 right-6 h-[50px] border border-black cursor-pointer bg-[#18B039]'> 
      <TfiAngleUp className='m-auto' /> 
     </button> 
   ); 
-} 
+}
   
 export default ScrollButton; 

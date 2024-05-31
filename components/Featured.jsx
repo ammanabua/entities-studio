@@ -37,7 +37,7 @@ const Featured = () => {
         </div>
         <h2 className='text-center w-full underline font-bold text-2xl my-20'>
         <Link href="/collections/tamas-art">
-            ✨Tama's Art✨
+            ✨Tama&apos;s Art✨
         </Link>
         </h2>
     </section>

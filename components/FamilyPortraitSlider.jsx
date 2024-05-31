@@ -17,10 +17,6 @@ import Carousel from "./Carousel"
 export default function FamilyPortraitSlider ({ collection }){    
     
     
-    
-    
-    
-
   return (
     <>
         {!collection ? <p>LOADING</p> : 
@@ -69,7 +65,6 @@ export default function FamilyPortraitSlider ({ collection }){
                                 width={15}
                                 alt="Twitter" />
                         </Link>
-                        
                     </div>
                     <div className="bg-[#1A1A1A] rounded-full p-2">
                         <Link href='https://www.twitter.com/chimdidaentity' target="_blank" className="">

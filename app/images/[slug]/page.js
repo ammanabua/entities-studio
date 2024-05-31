@@ -8,11 +8,11 @@ import { addArt } from "../../../redux/cartSlice"
 import { useDispatch } from 'react-redux'
   
 
-export default async function Page ({ art }) {
+export default async function Page () {
     
-    const [product, setProduct] = useState(null)
-    const [price, setPrice] = useState("");
-    const [quantity, setQuantity] = ("");
+    const [art, setArt] = useState(null)
+    const [price, setPrice] = useState(0);
+    const [quantity, setQuantity] = (0);
 
     const router = useRouter();
     const dispatch = useDispatch();
@@ -27,7 +27,7 @@ export default async function Page ({ art }) {
         body: JSON.stringify(data),
         })
         const response = await res.json()
-        setProduct(response)
+        setArt(response)
         console.log(response)
         return response
     }
@@ -73,7 +73,7 @@ export default async function Page ({ art }) {
               <p className="font-rubik font-light w-40 m-auto text-sm mt-4">There is always help to give, all you have to do is ask.</p>
 
               <p className="font-rubik font-light text-sm my-8">
-                  4 x 3" Canvas
+                  4 x 3&quot; Canvas
               </p>
 
               <p className="font-rubik text-lg font-medium mb-8">

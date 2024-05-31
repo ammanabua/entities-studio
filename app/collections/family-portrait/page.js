@@ -4,7 +4,7 @@ import Image from "next/image"
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import FamilyPortraitSlider from '@/components/FamilyPortraitSlider'
-import { useEffect, useState } from 'react'
+import {Suspense, useEffect, useState} from 'react'
 import { json } from 'micro'
 
 
@@ -28,7 +28,9 @@ export default function Page () {
     const body = await res.json()
     console.log(body.images)
     setImages(body.images)
-  } 
+  }
+
+
 
   
 
@@ -43,17 +45,19 @@ export default function Page () {
     <>
       {!collection ? <section>
         Loading!
-      </section> : 
-      <section className='w-full align-center text-center pt-28 mb-4'> 
-          <h2 className='text-4xl font-bold uppercase mb-20'>
+      </section> :
+          <section className='w-full align-center text-center pt-28 mb-4'>
+            <h2 className='text-4xl font-bold uppercase mb-20'>
               Family Portrait
-          </h2>
+            </h2>
 
-          <div>
-            <FamilyPortraitSlider collection={collection} />
-          </div>
+            <div>
+              <Suspense fallback={<p>Loading...</p>}>
+                <FamilyPortraitSlider collection={collection}/>
+              </Suspense>
+            </div>
 
-          <div className='mt-12'>
+        <div className='mt-12'>
               <h2 className='text-2xl uppercase'>The Booklet</h2>
               <p className='font-rubik text-xl text-semibold tracking-wider mt-4'>(swipe right to left)</p>
           </div>
