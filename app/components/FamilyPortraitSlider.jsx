@@ -1,4 +1,4 @@
-'use client'
+
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { motion } from "framer-motion"
@@ -14,8 +14,8 @@ import { EffectCards, Autoplay, Pagination, Navigation, EffectCreative } from "s
 import Carousel from "./Carousel"
 
 
-export default function FamilyPortraitSlider ({ collection }){    
-    
+export default function FamilyPortraitSlider ({ collection }){
+
     
   return (
     <>

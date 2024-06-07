@@ -2,7 +2,7 @@
 import Image from "next/image"
 import Link from 'next/link'
 import { collections } from '../../data'
-import TamasGrid from "@/components/TamasGrid"
+import TamasGrid from "@/app/components/TamasGrid"
 
 export const metadata = {
     title: 'Tamas Art - Entities Studio',

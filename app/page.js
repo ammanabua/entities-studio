@@ -1,5 +1,5 @@
 import Image from "next/image"
-import Featured from "@/components/Featured"
+import Featured from "@/app/components/Featured"
 import Link from 'next/link'
 
 export const metadata = {

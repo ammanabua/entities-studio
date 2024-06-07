@@ -11,7 +11,6 @@ export const metadata = {
 
 export default async function page () {
 
-
     return (
         <section className='w-full flex-col justify-center text-center mt-56 lg:px-36'> 
                 

@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import Image from 'next/image'
-import AddNewArt from '@/components/AddNewArt'
+import AddNewArt from '@/app/components/AddNewArt'
 
 const page = () => {
   return (

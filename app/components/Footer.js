@@ -6,8 +6,8 @@ const Footer = () => {
   
 
   return (
-    <section className="bg-black w-full flex-col items-center pt-32 text-center pb-2">
-      <Link href='/'>
+    <section className="bg-black w-full flex-col items-center pt-32 text-center pb-2 font-krona">
+      <Link href='/public'>
         <div className="flex justify-center">
           <Image
             src="/footerlogo.png"

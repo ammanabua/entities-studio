@@ -18,7 +18,7 @@ export default function Navbar () {
     
     
     return (
-        <nav className={`font-krona flex w-full align-center items-center justify-between box-border top-0 left-0 right-0 px-12 ${isActive('/collections/tamas-art') ? 'bg-[#FF6868]' : ''} ${isActive('/cart') ? 'bg-white' : ''}`}>
+        <nav className={`font-krona flex w-full align-center items-center justify-between box-border top-0 left-0 right-0 px-12 py-8 ${isActive('/collections/tamas-art') ? 'bg-[#FF6868]' : ''} ${isActive('/cart') ? 'bg-white' : ''}`}>
             <Link href="/">
                 <Image
                     src="/head.png"

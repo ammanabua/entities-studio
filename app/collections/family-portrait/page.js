@@ -1,9 +1,9 @@
 'use client'
-import Flipbook from '@/components/Flipbook'
+import Flipbook from '@/app/components/Flipbook'
 import Image from "next/image"
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import FamilyPortraitSlider from '@/components/FamilyPortraitSlider'
+import FamilyPortraitSlider from '@/app/components/FamilyPortraitSlider'
 import {Suspense, useEffect, useState} from 'react'
 import { json } from 'micro'
 
@@ -34,27 +34,22 @@ export default function Page () {
 
   
 
-  //FILTER IMAGES FOR THE FAMILY-PORTRAIT COLLECTION
+  // FILTER IMAGES FOR THE FAMILY-PORTRAIT COLLECTION
   const collection = images.filter((item) => {
-    return item.tag == "family-portrait"
+    return item.tag === "family-portrait"
   })
 
   console.log(collection)
 
   return (
     <>
-      {!collection ? <section>
-        Loading!
-      </section> :
           <section className='w-full align-center text-center pt-28 mb-4'>
             <h2 className='text-4xl font-bold uppercase mb-20'>
               Family Portrait
             </h2>
 
             <div>
-              <Suspense fallback={<p>Loading...</p>}>
                 <FamilyPortraitSlider collection={collection}/>
-              </Suspense>
             </div>
 
         <div className='mt-12'>
@@ -84,7 +79,6 @@ export default function Page () {
               </Link>
           </div>
       </section>
-      }
     </>
   );
 }

@@ -1,11 +1,11 @@
 'use client'
 import './globals.css'
 import Head from 'next/head'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
+import Navbar from '@/app/components/Navbar'
+import Footer from '@/app/components/Footer'
 import store from '../redux/store'
 import { Provider } from 'react-redux'
-import ScrollButton from '@/components/ScrollButton'
+import ScrollButton from '@/app/components/ScrollButton'
 
 
 
