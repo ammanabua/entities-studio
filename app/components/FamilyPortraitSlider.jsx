@@ -1,9 +1,10 @@
 
-import { useState, useEffect } from "react"
+
 import Link from "next/link"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { getFamilyPortrait } from "@/app/lib/data";
 
 
 import 'swiper/css';
@@ -14,13 +15,12 @@ import { EffectCards, Autoplay, Pagination, Navigation, EffectCreative } from "s
 import Carousel from "./Carousel"
 
 
-export default function FamilyPortraitSlider ({ collection }){
+export default async function FamilyPortraitSlider (){
 
+  const collection = await getFamilyPortrait();
     
   return (
     <>
-        {!collection ? <p>LOADING</p> : 
-        
         <div className='bg-[#EBE6D3] lg:bg-gradient-to-r lg:bg-gradient-90 from-black from-25% via-[#EBE6D3] via-25% to-[#EBE6D3] py-28 lg:py-0 px-12 min-h-screen align-center w-full lg:w-10/12 lg:m-auto overflow-hidden'>
             
             {/* IMAGE SLIDER */}
@@ -79,7 +79,6 @@ export default function FamilyPortraitSlider ({ collection }){
                 </div>
             </div>
         </div>
-        }
     </>
   )
 }

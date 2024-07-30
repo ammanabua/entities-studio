@@ -12,7 +12,7 @@ export default async function Page () {
     
     const [art, setArt] = useState(null)
     const [price, setPrice] = useState(0);
-    const [quantity, setQuantity] = (0);
+    const [quantity, setQuantity] = (1);
 
     const router = useRouter();
     const dispatch = useDispatch();
@@ -27,8 +27,8 @@ export default async function Page () {
         body: JSON.stringify(data),
         })
         const response = await res.json()
-        setArt(response)
         console.log(response)
+        setArt(response)
         return response
     }
     

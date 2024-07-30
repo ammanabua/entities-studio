@@ -1,30 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link';
 import Image from 'next/image';
+import {getTamasArt} from "@/app/lib/data";
 
-const TamasGrid = () => {
+export default async function TamasGrid (){
 
-
-    const [images, setImages] = useState([]);
-
-
-    const collection = images.filter((item) => {
-        return item.tag == "tamas-art"
-    })
-
-    console.log(collection)
-
-    const getImages = async () => {
-    const res = await fetch('/api/images');
-    const body = await res.json()
-    console.log(body.images)
-    
-    setImages(body.images)
-    } 
-    
-    useEffect(() => {
-        getImages();
-    },[])
+    const collection = await getTamasArt();
 
 
   return (
@@ -53,4 +34,3 @@ const TamasGrid = () => {
   )
 }
 
-export default TamasGrid

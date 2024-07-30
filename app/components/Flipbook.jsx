@@ -1,8 +1,7 @@
-'use client'
-import React, { useRef, useState, useEffect } from "react";
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import { getImages } from '@/app/lib/data';
+import { getFamilyPortrait } from '@/app/lib/data';
 
 // Import Swiper styles
 import "swiper/css";
@@ -13,7 +12,9 @@ import { EffectCards, Autoplay, Pagination, Navigation, EffectCreative } from "s
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Flipbook({ collection }) {
+export default async function Flipbook() {
+
+    const collection = await getFamilyPortrait();
 
 
   return (

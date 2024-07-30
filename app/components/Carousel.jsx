@@ -54,8 +54,6 @@ const Carousel = ({ collection }) => {
 
   return (
     <>
-
-        {show ? 
         <div key={collection[currentIndex]} className="flex w-full justify-center items-center lg:items-start">
             <AnimatePresence mode="wait">
                 <motion.div
@@ -98,7 +96,7 @@ const Carousel = ({ collection }) => {
                     </div>
                 </motion.div>
             </AnimatePresence>
-        </div> : <div className="text-2xl font-bold">Loading</div>}
+        </div>
 
             {/* NAV LINKS FOR LARGE SCREENS */}
         <div className='hidden lg:flex w-2/3 lg:ml-60 items-center justify-between bottom-4 font-rubik z-40 text-[#777D96] absolute px-16'>

@@ -4,8 +4,8 @@ import Image from "next/image"
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import FamilyPortraitSlider from '@/app/components/FamilyPortraitSlider'
-import {Suspense, useEffect, useState} from 'react'
-import { json } from 'micro'
+import { Suspense } from 'react'
+
 
 
 
@@ -13,33 +13,33 @@ import { json } from 'micro'
 
 export default function Page () {
 
-  const [images, setImages] = useState([])
-
-  // RUN FUNCTION ON PAGE LOAD TO GET IMAGES FROM DB
-  useEffect(() => {
-    getImages();
-  },[]);
-
-
-
-  // GET ALL IMAGES FROM DB
-  async function getImages () {
-    const res = await fetch('http://localhost:3000/api/images');
-    const body = await res.json()
-    console.log(body.images)
-    setImages(body.images)
-  }
+  // const [images, setImages] = useState([])
+  //
+  // // RUN FUNCTION ON PAGE LOAD TO GET IMAGES FROM DB
+  // useEffect(() => {
+  //   getImages();
+  // },[]);
+  //
+  //
+  //
+  // // GET ALL IMAGES FROM DB
+  // async function getImages () {
+  //   const res = await fetch('http://localhost:3000/api/images');
+  //   const body = await res.json()
+  //   console.log(body.images)
+  //   setImages(body.images)
+  // }
 
 
 
   
 
   // FILTER IMAGES FOR THE FAMILY-PORTRAIT COLLECTION
-  const collection = images.filter((item) => {
-    return item.tag === "family-portrait"
-  })
+  // const collection = images.filter((item) => {
+  //   return item.tag === "family-portrait"
+  // })
 
-  console.log(collection)
+  // console.log(collection)
 
   return (
     <>
@@ -49,7 +49,9 @@ export default function Page () {
             </h2>
 
             <div>
-                <FamilyPortraitSlider collection={collection}/>
+                <Suspense fallback={<p>Loading Image... </p>}>
+                    <FamilyPortraitSlider />
+                </Suspense>
             </div>
 
         <div className='mt-12'>
@@ -58,7 +60,7 @@ export default function Page () {
           </div>
 
           <div className='h-screen border-dashed border-black border-4 mb-16 flex justify-center align-center'>
-              <Flipbook collection={collection} />
+              <Flipbook />
           </div>
 
           <div className='flex justify-center w-full'>

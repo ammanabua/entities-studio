@@ -26,28 +26,28 @@ export default function AddNewArt() {
   const handleClose = () => setOpen(false);
 
   return (
-    <div>
-      <Image 
+    <Box>
+      <Image
         src='/paint.png'
         height={60}
         width={60}
         alt="Add New Artwork"
         className="m-auto"
       />
-      <Button onClick={handleOpen}>Add New Art</Button>
+      <Button className="bg-red-500 text-white hover:text-blue-500" onClick={handleOpen}>Add New Art</Button>
       <Modal
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style} className="bg-blue-200">
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Add New Art Piece
+        <Box sx={style} className="">
+          <Typography id="modal-modal-title" variant="h6" component="h3">
+            New Art
           </Typography>
             <NewArtForm />
         </Box>
       </Modal>
-    </div>
+    </Box>
   )
 }

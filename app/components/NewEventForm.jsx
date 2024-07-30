@@ -1,41 +1,23 @@
 import {useState} from "react";
-import { Input, inputClasses } from '@mui/base/Input';
-import { styled } from '@mui/system';
-import clsx from 'clsx';
-
-import * as PropTypes from "prop-types";
-import { FormControl } from '@mui/base'
 
 
-export default function NewArtForm(){
+export default function NewEventForm(){
 
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
-    const [price, setPrice] = useState(0);
 
-    const handleSubmit = async(e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-
-        const data = {
-            title,
-            description,
-            image,
-            price
-        }
-
-        const response = await fetch('/api/images', {
-            method: 'POST',
-            body: data,
-        })
-        alert("New Art Piece Added");
+        alert("New Event Added");
     }
-    return(
+    return (
         <form className="font-rubik flex flex-col gap-6" onSubmit={handleSubmit}>
             <div className="flex flex-col">
                 <label htmlFor="title">
                     Title
                 </label>
-                <input className="border border-black rounded p-2" type="text" name="title" id="title" placeholder="Mona-Lisa"
+                <input className="border border-black rounded p-2" type="text" name="title" id="title"
+                       placeholder="Tamas Art"
                        value={title}
                        onChange={(e) => setTitle(e.target.value)} required/>
             </div>
@@ -43,7 +25,8 @@ export default function NewArtForm(){
                 <label htmlFor="desc">
                     Description
                 </label>
-                <textarea name="description" id="description" className="p-2 border border-black rounded" placeholder="The most famous art work ever"
+                <textarea name="desc" id="desc" className="p-2 border border-black rounded"
+                          placeholder="The most famous art work ever"
                           value={description}
                           rows={3}
                           onChange={(e) => setDescription(e.target.value)} required/>
@@ -58,7 +41,7 @@ export default function NewArtForm(){
 
             <div className="flex flex-col">
                 <label htmlFor="collection">
-                    Collection
+                    Event Type
                 </label>
                 <select className="border border-black rounded p-2" name="collection" id="collection">
                     <option value="none">None</option>
@@ -66,14 +49,8 @@ export default function NewArtForm(){
                     <option value="tamas-art">Tamas Art</option>
                 </select>
             </div>
-            <div className="flex flex-col">
-                <label htmlFor="price">
-                    Price
-                </label>
-                <input className="border border-black rounded p-2" placeholder="£5,000" type="number"/>
-            </div>
 
-            <input className="rounded p-2 bg-green-700 text-white" type="submit" value="Create Art"/>
+            <input className="rounded p-2 bg-green-700 text-white" type="submit" value="Create Event"/>
 
 
         </form>

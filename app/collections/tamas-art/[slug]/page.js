@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import Image from "next/image"
 import Link from 'next/link';
 
-const Page = () => {
+const Page = ({ params }) => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
     
@@ -28,7 +28,7 @@ const Page = () => {
         
         <div className='w-full lg:flex justify-center gap-16'>
           <div className='w-full lg:w-3/5'>
-            <Link href="/images/fascination">
+            <Link href={`/images/${params.slug}`}>
               <Image
                 src='/tamas-art/fascination-dg.png'
                 width='0'
