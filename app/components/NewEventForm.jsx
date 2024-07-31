@@ -49,6 +49,12 @@ export default function NewEventForm(){
                     <option value="tamas-art">Tamas Art</option>
                 </select>
             </div>
+            <div className="flex flex-col">
+                <label htmlFor="collection">
+                    Time
+                </label>
+                <input className="p-2 border border-black rounded" type="datetime-local" name="time" id="time"/>
+            </div>
 
             <input className="rounded p-2 bg-green-700 text-white" type="submit" value="Create Event"/>
 

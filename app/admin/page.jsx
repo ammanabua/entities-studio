@@ -8,9 +8,9 @@ import AddNewEvent from "@/app/components/AddNewEvent";
 const page = () => {
   return (
 
-    <main className='bg-white flex justify-center align-center w-full pb-24'>
-        <section className='lg:my-12 w-full min-h-screen'>
-            <div className='grid grid-cols-2 border border-red-700 w-full m-auto h-4/5'>
+    <main className='bg-white flex justify-center align-center w-full'>
+        <section className='w-full flex flex-col gap-8'>
+            <div className='grid grid-cols-2 w-full m-auto'>
                 <div className='flex bg-gray-300 justify-center items-center'>Available Pieces</div>
                 <div className='flex bg-blue-200 justify-center items-center'>Collections</div>
                 <div className='flex bg-red-200 justify-center items-center'>Events</div>

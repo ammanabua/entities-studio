@@ -30,7 +30,7 @@ export default function NewArtForm(){
         alert("New Art Piece Added");
     }
     return(
-        <form className="font-rubik flex flex-col gap-6" onSubmit={handleSubmit}>
+        <form className="font-rubik text-sm flex flex-col gap-6" onSubmit={handleSubmit}>
             <div className="flex flex-col">
                 <label htmlFor="title">
                     Title

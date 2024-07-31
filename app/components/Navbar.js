@@ -18,7 +18,7 @@ export default function Navbar () {
     
     
     return (
-        <nav className={`font-krona flex w-full align-center items-center justify-between box-border top-0 left-0 right-0 px-12 py-8 ${isActive('/collections/tamas-art') ? 'bg-[#FF6868]' : ''} ${isActive('/cart') ? 'bg-white' : ''}`}>
+        <nav className={`font-krona flex w-full align-center items-center justify-between box-border top-0 left-0 right-0 px-12 py-8 ${isActive('/collections/tamas-art') ? 'bg-[#FF6868]' : ''} ${isActive('/cart') || isActive('/admin') ? 'bg-white' : ''}`}>
             <Link href="/">
                 <Image
                     src="/head.png"
@@ -77,21 +77,21 @@ export default function Navbar () {
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
             >
-            <Box className="absolute w-full h-screen bg-white px-12">
-                <Box className="flex justify-between items-center">
-                    <Link href='/' onClick={handleClose}>
-                        <Image src='/head.png' height={70} width={95} alt="Entities Studo" />
-                    </Link>
-                    <Typography className="text-center" onClick={handleClose}>
-                        X
-                    </Typography>
+                <Box className="absolute w-full h-screen bg-white px-12">
+                    <Box className="flex justify-between items-center">
+                        <Link href='/' onClick={handleClose}>
+                            <Image src='/head.png' height={70} width={95} alt="Entities Studo" />
+                        </Link>
+                        <Typography className="text-center" onClick={handleClose}>
+                            X
+                        </Typography>
+                    </Box>
+                    <ul className="bg-transparent pt-36 font-rubik text-3xl font-light">
+                        <Link href="/collections" className="block px-2 py-4" onClick={handleClose}>Collections</Link>
+                        <Link href="/events" className="block px-2 py-4 hover:underline" onClick={handleClose}>Events</Link>
+                        <Link href="/about" className="block px-2 py-4 hover:underline" onClick={handleClose}>Bio</Link>
+                    </ul>
                 </Box>
-                <ul className="bg-transparent pt-36 font-rubik text-3xl font-light">
-                    <Link href="/collections" className="block px-2 py-4" onClick={handleClose}>Collections</Link>
-                    <Link href="/events" className="block px-2 py-4 hover:underline" onClick={handleClose}>Events</Link>
-                    <Link href="/about" className="block px-2 py-4 hover:underline" onClick={handleClose}>Bio</Link>
-                </ul>
-            </Box>
             </Modal>
         </nav>
     );
