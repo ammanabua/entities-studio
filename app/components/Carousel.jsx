@@ -63,7 +63,7 @@ const Carousel = ({ collection }) => {
                     key={currentIndex}
                     className='w-full md:w-1/2 px-4 lg:w-1/3 lg:order-2'>
                     <h3 className='text-xl md:text-4xl md:font-bold text-left tracking-wide mb-8'>{collection[currentIndex].title}</h3>
-                    <p className='font-rubik text-left text-xl font-light tracking-wider mb-12 w-full tracking-wide'>{collection[currentIndex].desc}</p>
+                    <p className='font-rubik text-left text-xl font-light tracking-wider mb-12 w-full'>{collection[currentIndex].desc}</p>
                 </motion.div>
             </AnimatePresence>
 
@@ -74,7 +74,7 @@ const Carousel = ({ collection }) => {
                     exit={{opacity: 0}}
                     key={currentIndex}
                     className='w-full md:w-1/2 lg:w-1/3 mr-8'>
-                    <Link href={`/images/${collection[currentIndex].slug}`}>
+                    <Link href={`/images/${collection[currentIndex]._id}`}>
                         <Image
                             src={collection[currentIndex].url}
                             alt="Voids"

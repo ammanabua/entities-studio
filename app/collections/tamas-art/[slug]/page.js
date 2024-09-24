@@ -4,7 +4,7 @@ import Image from "next/image"
 import Link from 'next/link';
 
 const Page = ({ params }) => {
-
+  
   const [currentIndex, setCurrentIndex] = useState(0);
     
     const handleNext = () => {

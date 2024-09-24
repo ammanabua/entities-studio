@@ -33,52 +33,9 @@ const Cart = () => {
     }
 
 
-    // //PAYSTACK HOOK IMPLEMENTATION
-    // const config = {
-    //     reference: (new Date()).getTime().toString(),
-    //     email: "user@example.com",
-    //     amount: cart.total * 100,
-    //     publicKey: 'pk_test_687a8ebd710403b4c2f5383c6c027d896bd074dc',
-    // };
-    
-    // // you can call this function anything
-    // const onSuccess = (reference) => {
-    //   // Implementation for whatever you want to do with reference and after success call.
-    //     const shipping = {
-    //         name:{
-    //             full_name: "Jimmy Carter"
-    //         },
-    //         address: {
-    //             address_line_1: "Ezimba Street"
-    //         }
-    //     }
-
-    //     createOrder({
-    //         customer:shipping.name.full_name,
-    //         address: shipping.address.address_line_1,
-    //         telephone: 9059646709,
-    //         total: cart.total,
-    //         method: 0,
-        
-    //     });
-
-    //   console.log(reference);
-    // };
-  
-    // // you can call this function anything
-    // const onClose = () => {
-    //   // implementation for  whatever you want to do when the Paystack dialog closed.
-    //   console.log('closed')
-    // }
-  
-    
-    // const initializePayment = usePaystackPayment(config);
-
-    //END OF PAYSTACK HOOK IMPLEMENTATION
-
     const EmptyCart = () => (
         <div variant="subtitle1">Your Cart is empty, 
-            <Link href="/" passHref>
+            <Link href="/collections" passHref>
                 Pick some items!
             </Link>
         </div>
@@ -173,7 +130,7 @@ const Cart = () => {
             <h1 className='text-center'>Entities Basket</h1>
 
             <div className='mt-20'>
-                 <FilledCart />
+                 <EmptyCart />
             </div>
         </div>
     </>

@@ -1,9 +1,10 @@
 'use client'
+import { useRef } from "react";
 import './globals.css'
 import Head from 'next/head'
 import Navbar from '@/app/components/Navbar'
 import Footer from '@/app/components/Footer'
-import store from '../redux/store'
+import store, { makeStore } from '../redux/store'
 import { Provider } from 'react-redux'
 import ScrollButton from '@/app/components/ScrollButton'
 
@@ -11,12 +12,18 @@ import ScrollButton from '@/app/components/ScrollButton'
 
 
 export default function RootLayout({ children }) {
+
+    const storeRef = useRef();
+
+    if (!storeRef.current) {
+        storeRef.current = makeStore();
+        storeRef.current.dispatch();
+    }
   return (
     <html lang="en">
       <body className="font-krona ">
-        <Provider store={store}>
+        <Provider store={storeRef.current}>
           <Navbar />
-          
             {children}
             <ScrollButton />
           <Footer />

@@ -152,7 +152,7 @@ export default async function Flipbook() {
             <SwiperSlide key={item._id} className="bg-[#E96F1D] align-center h-full items-center">
                 <div className="border-2 border-black m-4 lg:h-[94%] bg-white p-8">
                   <div>
-                    <Link href={`/images/${item.slug}`}>
+                    <Link href={`/images/${item._id}`}>
                       <Image 
                         src={item.url}
                         alt={item.title}

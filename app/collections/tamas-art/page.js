@@ -4,10 +4,6 @@ import Link from 'next/link'
 import { collections } from '../../data'
 import TamasGrid from "@/app/components/TamasGrid"
 
-export const metadata = {
-    title: 'Tamas Art - Entities Studio',
-    description: '',
-}
 
 
 
