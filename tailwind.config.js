@@ -4,6 +4,7 @@ module.exports = {
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
+      './src/**/*.{js,ts,jsx,tsx,mdx}'
   ],
   theme: {
     extend: {
@@ -13,7 +14,8 @@ module.exports = {
         'barrio': ['Barrio', 'sans-serif']
       },
       backgroundImage: {
-        'gradient-90': 'linear-gradient(90deg, var(--tw-gradient-stops))'
+        'gradient-90': 'linear-gradient(90deg, var(--tw-gradient-stops))',
+        'collections': "url('/collections-bg.jpg')"
       }
     },
   },
