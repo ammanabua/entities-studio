@@ -1,9 +1,14 @@
+'use client'
 import Image from 'next/image'
 import React from 'react'
+import { motion } from "framer-motion"
 
 const Loader = () => {
   return (
-    <div className='h-screen flex items-center justify-center'>
+    <motion.div className='h-screen flex flex-col items-center justify-center'
+      initial={{ opacity: 1}}
+      animate={{ opacity: 0 }}
+      transition = {{ duration: 0.5, ease: 'linear', repeat: true}}>
       <Image
         src="/head.png"
         width={95}
@@ -13,7 +18,8 @@ const Loader = () => {
             maxWidth: "100%",
             height: "auto"
         }} />
-    </div>
+        <p>Loading...</p>
+    </motion.div>
   )
 }
 
