@@ -1,8 +1,8 @@
 import mongoose, { ConnectOptions } from 'mongoose'
 
-const MONGO_URL_LOCAL = process.env.MONGO_URL_LOCAL as string | undefined
+const MONGO_URL = process.env.MONGO_URL as string | undefined
 
-if (!MONGO_URL_LOCAL) {
+if (!MONGO_URL) {
   throw new Error('Please define the MONGO_URL environment variable inside .env.local')
 }
 
@@ -33,7 +33,7 @@ async function dbConnect(uri?: string, options?: ConnectOptions) {
     }
 
     cached!.promise = mongoose
-      .connect(MONGO_URL_LOCAL!, opts)
+      .connect(MONGO_URL!, opts)
       .then((mongooseInstance) => {
         return mongooseInstance
       })
